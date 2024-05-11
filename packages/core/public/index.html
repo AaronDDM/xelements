@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script type="module" src="./index.js"></script>
+    </head>
+    <body>
+        <my-custom-element></my-custom-element>
+        <script type="module">
+            const el = document.querySelector('my-custom-element')
+            setInterval(() => {
+
+                el.setAttribute('size', (parseInt(el.getAttribute("size")) || 0) + 1)
+            }, 1000)
+        </script>
+    </body>
+</html>

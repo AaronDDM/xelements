@@ -1,0 +1,25 @@
+{
+  "name": "@aaronddm/xelement-core",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && pnpm bundle && pnpm postbuild",
+    "bundle": "esbuild dist/main.js --bundle --outfile=dist/xelement.js",
+    "postbuild": "cp dist/xelement.js public/index.js",
+    "serve": "pnpm dlx serve public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@preact/signals": "^1.2.3",
+    "@types/node": "^20.12.11",
+    "esbuild": "^0.20.2",
+    "preact": "^10.21.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

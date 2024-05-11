@@ -1,0 +1,21 @@
+{
+  "name": "@aaronddm/xelement-build",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "preact": "^10.21.0",
+    "sass": "^1.77.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

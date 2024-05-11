@@ -1,0 +1,1 @@
+export const X_ELEMENT_PROPERTIES_KEY = "_x_element_properties";
