@@ -1,6 +1,5 @@
-import "../core/metadata-shim";
-import { XElement } from "../core/base"
 import { X_ELEMENT_PROPERTIES_KEY } from "../core/globals";
+import "../core/metadata-shim";
 
 export type PropertyArgs = {
     name?: string;
@@ -16,7 +15,7 @@ type Context = PropertyContext & {
     metadata: Record<PropertyKey, unknown>;
 }
 
-export default function Property<This extends XElement, Return>(args?: PropertyArgs) {
+export default function Property<This extends HTMLElement, Return>(args?: PropertyArgs) {
     return function Deorator(
         _target: undefined,
         context: Context

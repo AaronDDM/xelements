@@ -1,16 +1,20 @@
 import { signal } from "@preact/signals";
-import { Fragment } from "preact";
+import { MyEl } from "./MyEl";
 import Component from "./decorator/component";
 import Property from "./decorator/property";
-import { XElement } from "./core/base";
-import { MyEl } from "./MyEl";
+import { Fragment } from "preact/jsx-runtime";
+import State from "./decorator/state";
 
-@Component()
-class MyXElement extends XElement {
+@Component({
+  tag: "my-custom-element",
+  style: "main.scss"
+})
+export class MyXElement extends HTMLElement {
   @Property()
   private size = signal("");
 
-  private loading = signal(false);
+  @State()
+  private accessor loading = false;
 
   constructor() {
     super();
@@ -27,15 +31,14 @@ class MyXElement extends XElement {
   render() {
     return (
       <Fragment>
+        <h1>hi</h1>
         <MyEl size={this.size.value} />
-        <div>{!this.loading.value ? 'Loading...' : 'Loaded'}</div>
+        <div>{!this.loading ? 'Loading...' : 'Loaded'}</div>
         <button onClick={() => {
           console.debug("clicked")
-          this.loading.value = !this.loading.value
+          this.loading = !this.loading
         }}>Toggle</button>
       </Fragment>
     )
   }
 }
-
-customElements.define("my-custom-element", MyXElement);

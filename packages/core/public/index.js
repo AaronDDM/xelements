@@ -1,6 +1,6 @@
 "use strict";
 (() => {
-  // node_modules/.pnpm/preact@10.21.0/node_modules/preact/dist/preact.module.js
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/dist/preact.module.js
   var n;
   var l;
   var u;
@@ -307,7 +307,7 @@
     return n3.__v.__b - l5.__v.__b;
   }, S.__r = 0, e = 0, c = M(false), s = M(true), a = 0;
 
-  // node_modules/.pnpm/preact@10.21.0/node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
   var f2 = 0;
   var i2 = Array.isArray;
   function u2(e4, t4, n3, o4, i5, u5) {
@@ -323,7 +323,7 @@
     return l.vnode && l.vnode(l5), l5;
   }
 
-  // node_modules/.pnpm/preact@10.21.0/node_modules/preact/hooks/dist/hooks.module.js
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/hooks/dist/hooks.module.js
   var t2;
   var r2;
   var u3;
@@ -416,7 +416,7 @@
     });
   }
 
-  // node_modules/.pnpm/@preact+signals-core@1.6.0/node_modules/@preact/signals-core/dist/signals-core.module.js
+  // ../../node_modules/.pnpm/@preact+signals-core@1.6.0/node_modules/@preact/signals-core/dist/signals-core.module.js
   var i4 = Symbol.for("preact-signals");
   function t3() {
     if (!(s3 > 1)) {
@@ -779,7 +779,7 @@
     return t4.d.bind(t4);
   }
 
-  // node_modules/.pnpm/@preact+signals@1.2.3_preact@10.21.0/node_modules/@preact/signals/dist/signals.module.js
+  // ../../node_modules/.pnpm/@preact+signals@1.2.3_preact@10.21.0/node_modules/@preact/signals/dist/signals.module.js
   var v4;
   var s4;
   function l4(n3, i5) {
@@ -965,18 +965,37 @@
     }, []);
   }
 
+  // dist/MyEl.js
+  var MyEl = ({ size }) => {
+    return u2("div", { children: ["This is the size: ", size, "!!!"] });
+  };
+
+  // dist/core/globals.js
+  var X_ELEMENT_PROPERTIES_KEY = "_x_element_properties";
+
   // dist/decorator/component.js
-  function Component() {
+  function Component({ tag }) {
     return function ClassDecorator(target, ctx) {
       const className = ctx.name?.toString();
       console.debug(`[@Component] Class Name: ${className}`);
-      return class extends target {
+      if ("render" in target) {
+        throw new Error("You have to define a render method.");
+      }
+      ctx.addInitializer(function() {
+        customElements.define(tag, this);
+      });
+      return class XElement extends target {
         constructor(...args) {
           super();
-          const host = document.createElement("div");
-          const shadowRoot = this.attachShadow({ mode: "open" }).appendChild(host);
+          const shadowRoot = this.attachShadow({ mode: "open" });
+          if (typeof this.injectStyles === "function") {
+            this.injectStyles(shadowRoot);
+          }
           const App = this.render.bind(this);
           B(g(App, {}), shadowRoot);
+        }
+        static get observedAttributes() {
+          return this[Symbol.metadata]?.[X_ELEMENT_PROPERTIES_KEY] ?? [];
         }
       };
     };
@@ -984,9 +1003,6 @@
 
   // dist/core/metadata-shim.js
   Symbol.metadata ?? (Symbol.metadata = Symbol.for("Symbol.metadata"));
-
-  // dist/core/globals.js
-  var X_ELEMENT_PROPERTIES_KEY = "_x_element_properties";
 
   // dist/decorator/property.js
   function Property(args) {
@@ -1004,17 +1020,33 @@
     };
   }
 
-  // dist/core/base.js
-  var XElement = class extends HTMLElement {
-    static get observedAttributes() {
-      return this[Symbol.metadata]?.[X_ELEMENT_PROPERTIES_KEY] ?? [];
-    }
-  };
-
-  // dist/MyEl.js
-  var MyEl = ({ size }) => {
-    return u2("div", { children: ["This is the size: ", size, "!!!"] });
-  };
+  // dist/decorator/state.js
+  function State(args) {
+    return function Deorator(value, context) {
+      const fieldName = args?.name || context.name.toString();
+      let { get } = value;
+      console.debug(`[@State] Name: ${fieldName}`, { value, context });
+      if (context.kind !== "accessor") {
+        throw new Error("@State() can only be used on accessor properties (e.g. @State accessor private myState: boolean = true;)");
+      }
+      return {
+        get() {
+          const v5 = get.call(this);
+          return v5?.value;
+        },
+        set(val) {
+          const signalValue = get.call(this);
+          if (signalValue) {
+            signalValue.value = val;
+          }
+        },
+        init(initialValue) {
+          const value2 = d3(initialValue);
+          return value2;
+        }
+      };
+    };
+  }
 
   // dist/main.js
   var __esDecorate = function(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
@@ -1073,36 +1105,76 @@
       name = name.description ? "[".concat(name.description, "]") : "";
     return Object.defineProperty(f5, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
   };
+  var __classPrivateFieldGet = function(receiver, state, kind, f5) {
+    if (kind === "a" && !f5)
+      throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f5 : !state.has(receiver))
+      throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f5 : kind === "a" ? f5.call(receiver) : f5 ? f5.value : state.get(receiver);
+  };
+  var __classPrivateFieldSet = function(receiver, state, value, kind, f5) {
+    if (kind === "m")
+      throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f5)
+      throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f5 : !state.has(receiver))
+      throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return kind === "a" ? f5.call(receiver, value) : f5 ? f5.value = value : state.set(receiver, value), value;
+  };
   var MyXElement = (() => {
-    let _classDecorators = [Component()];
+    var _MyXElement_loading_accessor_storage;
+    let _classDecorators = [Component({
+      tag: "my-custom-element",
+      style: "main.scss"
+    })];
     let _classDescriptor;
     let _classExtraInitializers = [];
     let _classThis;
-    let _classSuper = XElement;
+    let _classSuper = HTMLElement;
     let _size_decorators;
     let _size_initializers = [];
     let _size_extraInitializers = [];
+    let _loading_decorators;
+    let _loading_initializers = [];
+    let _loading_extraInitializers = [];
     var MyXElement2 = _classThis = class extends _classSuper {
+      get loading() {
+        return __classPrivateFieldGet(this, _MyXElement_loading_accessor_storage, "f");
+      }
+      set loading(value) {
+        __classPrivateFieldSet(this, _MyXElement_loading_accessor_storage, value, "f");
+      }
       constructor() {
         super();
         this.size = __runInitializers(this, _size_initializers, d3(""));
-        this.loading = (__runInitializers(this, _size_extraInitializers), d3(false));
+        _MyXElement_loading_accessor_storage.set(this, (__runInitializers(this, _size_extraInitializers), __runInitializers(this, _loading_initializers, false)));
+        __runInitializers(this, _loading_extraInitializers);
       }
       attributeChangedCallback(name, oldValue, newValue) {
         console.log(`Attribute ${name} has changed from ${oldValue} to ${newValue}.`);
         this.size.value = newValue;
       }
       render() {
-        return u2(m, { children: [u2(MyEl, { size: this.size.value }), u2("div", { children: !this.loading.value ? "Loading..." : "Loaded" }), u2("button", { onClick: () => {
+        return u2(m, { children: [u2("h1", { children: "hi" }), u2(MyEl, { size: this.size.value }), u2("div", { children: !this.loading ? "Loading..." : "Loaded" }), u2("button", { onClick: () => {
           console.debug("clicked");
-          this.loading.value = !this.loading.value;
+          this.loading = !this.loading;
         }, children: "Toggle" })] });
       }
+      injectStyles(shadowRoot) {
+        const style = document.createElement("style");
+        style.textContent = "div {\n  background-color: aquamarine;\n}";
+        shadowRoot.appendChild(style);
+      }
     };
+    _MyXElement_loading_accessor_storage = /* @__PURE__ */ new WeakMap();
     __setFunctionName(_classThis, "MyXElement");
     (() => {
       const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;
       _size_decorators = [Property()];
+      _loading_decorators = [State()];
+      __esDecorate(_classThis, null, _loading_decorators, { kind: "accessor", name: "loading", static: false, private: false, access: { has: (obj) => "loading" in obj, get: (obj) => obj.loading, set: (obj, value) => {
+        obj.loading = value;
+      } }, metadata: _metadata }, _loading_initializers, _loading_extraInitializers);
       __esDecorate(null, null, _size_decorators, { kind: "field", name: "size", static: false, private: false, access: { has: (obj) => "size" in obj, get: (obj) => obj.size, set: (obj, value) => {
         obj.size = value;
       } }, metadata: _metadata }, _size_initializers, _size_extraInitializers);
@@ -1114,5 +1186,4 @@
     })();
     return MyXElement2 = _classThis;
   })();
-  customElements.define("my-custom-element", MyXElement);
 })();
