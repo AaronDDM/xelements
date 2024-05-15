@@ -11,7 +11,7 @@ export default function compiler({ rootNames, currentDir, compilerOptions }: {ro
       outDir: "./dist/",
       module: ts.ModuleKind.ESNext,
       moduleResolution: ts.ModuleResolutionKind.Bundler,
-      target: ts.ScriptTarget.ES2020,
+      target: ts.ScriptTarget.ES2015,
       lib: ["DOM","ES2023","ESNext.Decorators"],
       jsx: ts.JsxEmit.ReactJSX,
       jsxImportSource: "preact",
