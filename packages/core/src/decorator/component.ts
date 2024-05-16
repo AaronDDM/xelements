@@ -1,4 +1,3 @@
-
 import { FunctionComponent, h, render } from "preact";
 import { X_ELEMENT_PROPERTIES_KEY } from "../core/globals";
 
@@ -8,12 +7,13 @@ type ComponentArgs = {
 }
 
 export interface ComponentElement extends HTMLElement {
-  render: FunctionComponent,
-  injectStyles?: (shadowRoot: ShadowRoot) => void,
+  render: FunctionComponent;
+  attributeChangedCallback?(name: any, oldValue: any, newValue: any): void;
+  injectStyles?: (shadowRoot: ShadowRoot) => void;
 }
 
 interface XElementConstructor {
-  new (...params: any[]): ComponentElement;
+  new(...params: any[]): ComponentElement;
 }
 
 
@@ -29,7 +29,7 @@ export default function Component({ tag }: ComponentArgs) {
     if ('render' in target) {
       throw new Error('You have to define a render method.')
     }
-    
+
     // Register custom element
     ctx.addInitializer(function (this) {
       // Register the custom element
@@ -49,6 +49,20 @@ export default function Component({ tag }: ComponentArgs) {
         const App = this.render.bind(this)
 
         render(h(App, {}), shadowRoot);
+      }
+
+      attributeChangedCallback(name: any, oldValue: any, newValue: any) {
+        if (typeof super.attributeChangedCallback !== "undefined") {
+          super.attributeChangedCallback(name, oldValue, newValue)
+        } else {
+          console.log(
+            `[@Component] Attribute ${name} has changed from ${oldValue} to ${newValue}.`,
+          );
+          // See if property exists, if it does, update it
+          if (name in this && oldValue !== newValue) {
+            this[name as keyof this] = newValue;
+          }
+        }
       }
 
       static get observedAttributes() {

@@ -1,4 +1,3 @@
-import { signal } from "@preact/signals";
 import { MyEl } from "./MyEl";
 import Component from "./decorator/component";
 import Property from "./decorator/property";
@@ -11,7 +10,10 @@ import State from "./decorator/state";
 })
 export class MyXElement extends HTMLElement {
   @Property()
-  private size = signal("");
+  private accessor size = "";
+
+  @Property({ reflect: true })
+  private accessor name = "";
 
   @State()
   private accessor loading = false;
@@ -20,22 +22,15 @@ export class MyXElement extends HTMLElement {
     super();
   }
 
-  attributeChangedCallback(name: any, oldValue: any, newValue: any) {
-    console.log(
-      `Attribute ${name} has changed from ${oldValue} to ${newValue}.`,
-    );
-
-    this.size.value = newValue
-  }
-
   render() {
     return (
       <Fragment>
         <h1>hi</h1>
-        <MyEl size={this.size.value} />
+        <MyEl size={this.size} />
         <div>{!this.loading ? 'Loading...' : 'Loaded'}</div>
         <button onClick={() => {
           console.debug("clicked")
+          this.name = `${this.size} is now`
           this.loading = !this.loading
         }}>Toggle</button>
       </Fragment>
