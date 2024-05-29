@@ -27,7 +27,7 @@ export default function Property<T extends HTMLElement, V extends any>(args?: Pr
                 return {
                     get(this) {
                         const v = get.call(this) as Signal<V>
-                        return v?.value;
+                        return v  as V;
                     },
         
                     set(this, val: any) {

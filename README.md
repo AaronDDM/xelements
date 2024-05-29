@@ -1,3 +1,10 @@
+# XElements
+
+This is an experimental repository for creating custom elements.
+
+## Example
+
+```tsx
 import { Signal, signal } from "@preact/signals";
 import "preact/debug";
 import { Fragment } from "preact/jsx-runtime";
@@ -43,3 +50,23 @@ export class MyXElement extends HTMLElement {
     )
   }
 }
+```
+
+Usage:
+```html
+<html>
+    <head>
+        <script type="module" src="./index.js"></script>
+    </head>
+    <body>
+        <my-custom-element></my-custom-element>
+        <script type="module">
+            const el = document.querySelector('my-custom-element')
+            setInterval(() => {
+
+                el.setAttribute('size', (parseInt(el.getAttribute("size")) || 0) + 1)
+            }, 1000)
+        </script>
+    </body>
+</html>
+```

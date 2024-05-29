@@ -1,4 +1,1455 @@
-"use strict";(()=>{var Y,h,$t,st,U,Nt,zt,it,at,rt,ot,oe,L={},Dt=[],_e=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,ut=Array.isArray;function N(e,t){for(var n in t)e[n]=t[n];return e}function Mt(e){var t=e.parentNode;t&&t.removeChild(e)}function ft(e,t,n){var i,r,o,s={};for(o in t)o=="key"?i=t[o]:o=="ref"?r=t[o]:s[o]=t[o];if(arguments.length>2&&(s.children=arguments.length>3?Y.call(arguments,2):n),typeof e=="function"&&e.defaultProps!=null)for(o in e.defaultProps)s[o]===void 0&&(s[o]=e.defaultProps[o]);return B(e,s,i,r,null)}function B(e,t,n,i,r){var o={type:e,props:t,key:n,ref:i,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:r??++$t,__i:-1,__u:0};return r==null&&h.vnode!=null&&h.vnode(o),o}function j(e){return e.children}function M(e,t){this.props=e,this.context=t}function $(e,t){if(t==null)return e.__?$(e.__,e.__i+1):null;for(var n;t<e.__k.length;t++)if((n=e.__k[t])!=null&&n.__e!=null)return n.__e;return typeof e.type=="function"?$(e):null}function At(e){var t,n;if((e=e.__)!=null&&e.__c!=null){for(e.__e=e.__c.base=null,t=0;t<e.__k.length;t++)if((n=e.__k[t])!=null&&n.__e!=null){e.__e=e.__c.base=n.__e;break}return At(e)}}function jt(e){(!e.__d&&(e.__d=!0)&&U.push(e)&&!G.__r++||Nt!==h.debounceRendering)&&((Nt=h.debounceRendering)||zt)(G)}function G(){var e,t,n,i,r,o,s,a;for(U.sort(it);e=U.shift();)e.__d&&(t=U.length,i=void 0,o=(r=(n=e).__v).__e,s=[],a=[],n.__P&&((i=N({},r)).__v=r.__v+1,h.vnode&&h.vnode(i),lt(n.__P,i,r,n.__n,n.__P.ownerSVGElement!==void 0,32&r.__u?[o]:null,s,o??$(r),!!(32&r.__u),a),i.__v=r.__v,i.__.__k[i.__i]=i,Lt(s,i,a),i.__e!=o&&At(i)),U.length>t&&U.sort(it));G.__r=0}function Ft(e,t,n,i,r,o,s,a,f,u,c){var _,g,l,y,k,v=i&&i.__k||Dt,d=t.length;for(n.__d=f,se(n,t,v),f=n.__d,_=0;_<d;_++)(l=n.__k[_])!=null&&typeof l!="boolean"&&typeof l!="function"&&(g=l.__i===-1?L:v[l.__i]||L,l.__i=_,lt(e,l,g,r,o,s,a,f,u,c),y=l.__e,l.ref&&g.ref!=l.ref&&(g.ref&&ct(g.ref,null,l),c.push(l.ref,l.__c||y,l)),k==null&&y!=null&&(k=y),65536&l.__u||g.__k===l.__k?(f&&!f.isConnected&&(f=$(g)),f=Ot(l,f,e)):typeof l.type=="function"&&l.__d!==void 0?f=l.__d:y&&(f=y.nextSibling),l.__d=void 0,l.__u&=-196609);n.__d=f,n.__e=k}function se(e,t,n){var i,r,o,s,a,f=t.length,u=n.length,c=u,_=0;for(e.__k=[],i=0;i<f;i++)s=i+_,(r=e.__k[i]=(r=t[i])==null||typeof r=="boolean"||typeof r=="function"?null:typeof r=="string"||typeof r=="number"||typeof r=="bigint"||r.constructor==String?B(null,r,null,null,null):ut(r)?B(j,{children:r},null,null,null):r.constructor===void 0&&r.__b>0?B(r.type,r.props,r.key,r.ref?r.ref:null,r.__v):r)!=null?(r.__=e,r.__b=e.__b+1,a=ae(r,n,s,c),r.__i=a,o=null,a!==-1&&(c--,(o=n[a])&&(o.__u|=131072)),o==null||o.__v===null?(a==-1&&_--,typeof r.type!="function"&&(r.__u|=65536)):a!==s&&(a===s+1?_++:a>s?c>f-s?_+=a-s:_--:a<s?a==s-1&&(_=a-s):_=0,a!==i+_&&(r.__u|=65536))):(o=n[s])&&o.key==null&&o.__e&&!(131072&o.__u)&&(o.__e==e.__d&&(e.__d=$(o)),_t(o,o,!1),n[s]=null,c--);if(c)for(i=0;i<u;i++)(o=n[i])!=null&&!(131072&o.__u)&&(o.__e==e.__d&&(e.__d=$(o)),_t(o,o))}function Ot(e,t,n){var i,r;if(typeof e.type=="function"){for(i=e.__k,r=0;i&&r<i.length;r++)i[r]&&(i[r].__=e,t=Ot(i[r],t,n));return t}e.__e!=t&&(n.insertBefore(e.__e,t||null),t=e.__e);do t=t&&t.nextSibling;while(t!=null&&t.nodeType===8);return t}function ae(e,t,n,i){var r=e.key,o=e.type,s=n-1,a=n+1,f=t[n];if(f===null||f&&r==f.key&&o===f.type&&!(131072&f.__u))return n;if(i>(f!=null&&!(131072&f.__u)?1:0))for(;s>=0||a<t.length;){if(s>=0){if((f=t[s])&&!(131072&f.__u)&&r==f.key&&o===f.type)return s;s--}if(a<t.length){if((f=t[a])&&!(131072&f.__u)&&r==f.key&&o===f.type)return a;a++}}return-1}function Ht(e,t,n){t[0]==="-"?e.setProperty(t,n??""):e[t]=n==null?"":typeof n!="number"||_e.test(t)?n:n+"px"}function q(e,t,n,i,r){var o;t:if(t==="style")if(typeof n=="string")e.style.cssText=n;else{if(typeof i=="string"&&(e.style.cssText=i=""),i)for(t in i)n&&t in n||Ht(e.style,t,"");if(n)for(t in n)i&&n[t]===i[t]||Ht(e.style,t,n[t])}else if(t[0]==="o"&&t[1]==="n")o=t!==(t=t.replace(/(PointerCapture)$|Capture$/i,"$1")),t=t.toLowerCase()in e||t==="onFocusOut"||t==="onFocusIn"?t.toLowerCase().slice(2):t.slice(2),e.l||(e.l={}),e.l[t+o]=n,n?i?n.u=i.u:(n.u=at,e.addEventListener(t,o?ot:rt,o)):e.removeEventListener(t,o?ot:rt,o);else{if(r)t=t.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if(t!="width"&&t!="height"&&t!="href"&&t!="list"&&t!="form"&&t!="tabIndex"&&t!="download"&&t!="rowSpan"&&t!="colSpan"&&t!="role"&&t in e)try{e[t]=n??"";break t}catch{}typeof n=="function"||(n==null||n===!1&&t[4]!=="-"?e.removeAttribute(t):e.setAttribute(t,n))}}function Ut(e){return function(t){if(this.l){var n=this.l[t.type+e];if(t.t==null)t.t=at++;else if(t.t<n.u)return;return n(h.event?h.event(t):t)}}}function lt(e,t,n,i,r,o,s,a,f,u){var c,_,g,l,y,k,v,d,p,E,b,P,Tt,I,nt,x=t.type;if(t.constructor!==void 0)return null;128&n.__u&&(f=!!(32&n.__u),o=[a=t.__e=n.__e]),(c=h.__b)&&c(t);t:if(typeof x=="function")try{if(d=t.props,p=(c=x.contextType)&&i[c.__c],E=c?p?p.props.value:c.__:i,n.__c?v=(_=t.__c=n.__c).__=_.__E:("prototype"in x&&x.prototype.render?t.__c=_=new x(d,E):(t.__c=_=new M(d,E),_.constructor=x,_.render=fe),p&&p.sub(_),_.props=d,_.state||(_.state={}),_.context=E,_.__n=i,g=_.__d=!0,_.__h=[],_._sb=[]),_.__s==null&&(_.__s=_.state),x.getDerivedStateFromProps!=null&&(_.__s==_.state&&(_.__s=N({},_.__s)),N(_.__s,x.getDerivedStateFromProps(d,_.__s))),l=_.props,y=_.state,_.__v=t,g)x.getDerivedStateFromProps==null&&_.componentWillMount!=null&&_.componentWillMount(),_.componentDidMount!=null&&_.__h.push(_.componentDidMount);else{if(x.getDerivedStateFromProps==null&&d!==l&&_.componentWillReceiveProps!=null&&_.componentWillReceiveProps(d,E),!_.__e&&(_.shouldComponentUpdate!=null&&_.shouldComponentUpdate(d,_.__s,E)===!1||t.__v===n.__v)){for(t.__v!==n.__v&&(_.props=d,_.state=_.__s,_.__d=!1),t.__e=n.__e,t.__k=n.__k,t.__k.forEach(function(X){X&&(X.__=t)}),b=0;b<_._sb.length;b++)_.__h.push(_._sb[b]);_._sb=[],_.__h.length&&s.push(_);break t}_.componentWillUpdate!=null&&_.componentWillUpdate(d,_.__s,E),_.componentDidUpdate!=null&&_.__h.push(function(){_.componentDidUpdate(l,y,k)})}if(_.context=E,_.props=d,_.__P=e,_.__e=!1,P=h.__r,Tt=0,"prototype"in x&&x.prototype.render){for(_.state=_.__s,_.__d=!1,P&&P(t),c=_.render(_.props,_.state,_.context),I=0;I<_._sb.length;I++)_.__h.push(_._sb[I]);_._sb=[]}else do _.__d=!1,P&&P(t),c=_.render(_.props,_.state,_.context),_.state=_.__s;while(_.__d&&++Tt<25);_.state=_.__s,_.getChildContext!=null&&(i=N(N({},i),_.getChildContext())),g||_.getSnapshotBeforeUpdate==null||(k=_.getSnapshotBeforeUpdate(l,y)),Ft(e,ut(nt=c!=null&&c.type===j&&c.key==null?c.props.children:c)?nt:[nt],t,n,i,r,o,s,a,f,u),_.base=t.__e,t.__u&=-161,_.__h.length&&s.push(_),v&&(_.__E=_.__=null)}catch(X){t.__v=null,f||o!=null?(t.__e=a,t.__u|=f?160:32,o[o.indexOf(a)]=null):(t.__e=n.__e,t.__k=n.__k),h.__e(X,t,n)}else o==null&&t.__v===n.__v?(t.__k=n.__k,t.__e=n.__e):t.__e=ue(n.__e,t,n,i,r,o,s,f,u);(c=h.diffed)&&c(t)}function Lt(e,t,n){t.__d=void 0;for(var i=0;i<n.length;i++)ct(n[i],n[++i],n[++i]);h.__c&&h.__c(t,e),e.some(function(r){try{e=r.__h,r.__h=[],e.some(function(o){o.call(r)})}catch(o){h.__e(o,r.__v)}})}function ue(e,t,n,i,r,o,s,a,f){var u,c,_,g,l,y,k,v=n.props,d=t.props,p=t.type;if(p==="svg"&&(r=!0),o!=null){for(u=0;u<o.length;u++)if((l=o[u])&&"setAttribute"in l==!!p&&(p?l.localName===p:l.nodeType===3)){e=l,o[u]=null;break}}if(e==null){if(p===null)return document.createTextNode(d);e=r?document.createElementNS("http://www.w3.org/2000/svg",p):document.createElement(p,d.is&&d),o=null,a=!1}if(p===null)v===d||a&&e.data===d||(e.data=d);else{if(o=o&&Y.call(e.childNodes),v=n.props||L,!a&&o!=null)for(v={},u=0;u<e.attributes.length;u++)v[(l=e.attributes[u]).name]=l.value;for(u in v)if(l=v[u],u!="children"){if(u=="dangerouslySetInnerHTML")_=l;else if(u!=="key"&&!(u in d)){if(u=="value"&&"defaultValue"in d||u=="checked"&&"defaultChecked"in d)continue;q(e,u,null,l,r)}}for(u in d)l=d[u],u=="children"?g=l:u=="dangerouslySetInnerHTML"?c=l:u=="value"?y=l:u=="checked"?k=l:u==="key"||a&&typeof l!="function"||v[u]===l||q(e,u,l,v[u],r);if(c)a||_&&(c.__html===_.__html||c.__html===e.innerHTML)||(e.innerHTML=c.__html),t.__k=[];else if(_&&(e.innerHTML=""),Ft(e,ut(g)?g:[g],t,n,i,r&&p!=="foreignObject",o,s,o?o[0]:n.__k&&$(n,0),a,f),o!=null)for(u=o.length;u--;)o[u]!=null&&Mt(o[u]);a||(u="value",y!==void 0&&(y!==e[u]||p==="progress"&&!y||p==="option"&&y!==v[u])&&q(e,u,y,v[u],!1),u="checked",k!==void 0&&k!==e[u]&&q(e,u,k,v[u],!1))}return e}function ct(e,t,n){try{typeof e=="function"?e(t):e.current=t}catch(i){h.__e(i,n)}}function _t(e,t,n){var i,r;if(h.unmount&&h.unmount(e),(i=e.ref)&&(i.current&&i.current!==e.__e||ct(i,null,t)),(i=e.__c)!=null){if(i.componentWillUnmount)try{i.componentWillUnmount()}catch(o){h.__e(o,t)}i.base=i.__P=null}if(i=e.__k)for(r=0;r<i.length;r++)i[r]&&_t(i[r],t,n||typeof e.type!="function");n||e.__e==null||Mt(e.__e),e.__c=e.__=e.__e=e.__d=void 0}function fe(e,t,n){return this.constructor(e,n)}function Vt(e,t,n){var i,r,o,s;h.__&&h.__(e,t),r=(i=typeof n=="function")?null:n&&n.__k||t.__k,o=[],s=[],lt(t,e=(!i&&n||t).__k=ft(j,null,[e]),r||L,L,t.ownerSVGElement!==void 0,!i&&n?[n]:r?null:t.firstChild?Y.call(t.childNodes):null,o,!i&&n?n:r?r.__e:t.firstChild,i,s),Lt(o,e,s)}Y=Dt.slice,h={__e:function(e,t,n,i){for(var r,o,s;t=t.__;)if((r=t.__c)&&!r.__)try{if((o=r.constructor)&&o.getDerivedStateFromError!=null&&(r.setState(o.getDerivedStateFromError(e)),s=r.__d),r.componentDidCatch!=null&&(r.componentDidCatch(e,i||{}),s=r.__d),s)return r.__E=r}catch(a){e=a}throw e}},$t=0,st=function(e){return e!=null&&e.constructor==null},M.prototype.setState=function(e,t){var n;n=this.__s!=null&&this.__s!==this.state?this.__s:this.__s=N({},this.state),typeof e=="function"&&(e=e(N({},n),this.props)),e&&N(n,e),e!=null&&this.__v&&(t&&this._sb.push(t),jt(this))},M.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),jt(this))},M.prototype.render=j,U=[],zt=typeof Promise=="function"?Promise.prototype.then.bind(Promise.resolve()):setTimeout,it=function(e,t){return e.__v.__b-t.__v.__b},G.__r=0,at=0,rt=Ut(!1),ot=Ut(!0),oe=0;var le=0,we=Array.isArray;function T(e,t,n,i,r,o){t||(t={});var s,a,f=t;if("ref"in f)for(a in f={},t)a=="ref"?s=t[a]:f[a]=t[a];var u={type:e,props:f,key:n,ref:s,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,constructor:void 0,__v:--le,__i:-1,__u:0,__source:r,__self:o};if(typeof e=="function"&&(s=e.defaultProps))for(a in s)f[a]===void 0&&(f[a]=s[a]);return h.vnode&&h.vnode(u),u}var Wt=({size:e})=>T("div",{children:["This is the size: ",e,"!!!"]});var z="_x_element_properties";function dt({tag:e}){return function(n,i){var r;let o=(r=i.name)===null||r===void 0?void 0:r.toString();if(console.debug(`[@Component] Class Name: ${o}`),"render"in n)throw new Error("You have to define a render method.");return i.addInitializer(function(){customElements.define(e,this)}),class extends n{constructor(...a){super();let f=this.attachShadow({mode:"open"});typeof this.injectStyles=="function"&&this.injectStyles(f);let u=this.render.bind(this);Vt(ft(u,{}),f)}attributeChangedCallback(a,f,u){typeof super.attributeChangedCallback<"u"?super.attributeChangedCallback(a,f,u):(console.log(`[@Component] Attribute ${a} has changed from ${f} to ${u}.`),a in this&&f!==u&&(this[a]=u))}static get observedAttributes(){var a,f;return(f=(a=this[Symbol.metadata])===null||a===void 0?void 0:a[z])!==null&&f!==void 0?f:[]}}}}var pt,C,ht,Rt,It=0,Zt=[],K=[],S=h,Xt=S.__b,qt=S.__r,Bt=S.diffed,Gt=S.__c,Yt=S.unmount,Kt=S.__;function ce(e,t){S.__h&&S.__h(C,e,It||t),It=0;var n=C.__H||(C.__H={__:[],__h:[]});return e>=n.__.length&&n.__.push({__V:K}),n.__[e]}function mt(e,t){var n=ce(pt++,7);return pe(n.__H,t)?(n.__V=e(),n.i=t,n.__h=e,n.__V):n.__}function de(){for(var e;e=Zt.shift();)if(e.__P&&e.__H)try{e.__H.__h.forEach(J),e.__H.__h.forEach(vt),e.__H.__h=[]}catch(t){e.__H.__h=[],S.__e(t,e.__v)}}S.__b=function(e){C=null,Xt&&Xt(e)},S.__=function(e,t){e&&t.__k&&t.__k.__m&&(e.__m=t.__k.__m),Kt&&Kt(e,t)},S.__r=function(e){qt&&qt(e),pt=0;var t=(C=e.__c).__H;t&&(ht===C?(t.__h=[],C.__h=[],t.__.forEach(function(n){n.__N&&(n.__=n.__N),n.__V=K,n.__N=n.i=void 0})):(t.__h.forEach(J),t.__h.forEach(vt),t.__h=[],pt=0)),ht=C},S.diffed=function(e){Bt&&Bt(e);var t=e.__c;t&&t.__H&&(t.__H.__h.length&&(Zt.push(t)!==1&&Rt===S.requestAnimationFrame||((Rt=S.requestAnimationFrame)||he)(de)),t.__H.__.forEach(function(n){n.i&&(n.__H=n.i),n.__V!==K&&(n.__=n.__V),n.i=void 0,n.__V=K})),ht=C=null},S.__c=function(e,t){t.some(function(n){try{n.__h.forEach(J),n.__h=n.__h.filter(function(i){return!i.__||vt(i)})}catch(i){t.some(function(r){r.__h&&(r.__h=[])}),t=[],S.__e(i,n.__v)}}),Gt&&Gt(e,t)},S.unmount=function(e){Yt&&Yt(e);var t,n=e.__c;n&&n.__H&&(n.__H.__.forEach(function(i){try{J(i)}catch(r){t=r}}),n.__H=void 0,t&&S.__e(t,n.__v))};var Jt=typeof requestAnimationFrame=="function";function he(e){var t,n=function(){clearTimeout(i),Jt&&cancelAnimationFrame(t),setTimeout(e)},i=setTimeout(n,100);Jt&&(t=requestAnimationFrame(n))}function J(e){var t=C,n=e.__c;typeof n=="function"&&(e.__c=void 0,n()),C=t}function vt(e){var t=C;e.__c=e.__(),C=t}function pe(e,t){return!e||e.length!==t.length||t.some(function(n,i){return n!==e[i]})}var ve=Symbol.for("preact-signals");function gt(){if(A>1)A--;else{for(var e,t=!1;V!==void 0;){var n=V;for(V=void 0,yt++;n!==void 0;){var i=n.o;if(n.o=void 0,n.f&=-3,!(8&n.f)&&te(n))try{n.c()}catch(r){t||(e=r,t=!0)}n=i}}if(yt=0,A--,t)throw e}}var m=void 0;var V=void 0,A=0,yt=0,Z=0;function Qt(e){if(m!==void 0){var t=e.n;if(t===void 0||t.t!==m)return t={i:0,S:e,p:m.s,n:void 0,t:m,e:void 0,x:void 0,r:t},m.s!==void 0&&(m.s.n=t),m.s=t,e.n=t,32&m.f&&e.S(t),t;if(t.i===-1)return t.i=0,t.n!==void 0&&(t.n.p=t.p,t.p!==void 0&&(t.p.n=t.n),t.p=m.s,t.n=void 0,m.s.n=t,m.s=t),t}}function w(e){this.v=e,this.i=0,this.n=void 0,this.t=void 0}w.prototype.brand=ve;w.prototype.h=function(){return!0};w.prototype.S=function(e){this.t!==e&&e.e===void 0&&(e.x=this.t,this.t!==void 0&&(this.t.e=e),this.t=e)};w.prototype.U=function(e){if(this.t!==void 0){var t=e.e,n=e.x;t!==void 0&&(t.x=n,e.e=void 0),n!==void 0&&(n.e=t,e.x=void 0),e===this.t&&(this.t=n)}};w.prototype.subscribe=function(e){var t=this;return R(function(){var n=t.value,i=m;m=void 0;try{e(n)}finally{m=i}})};w.prototype.valueOf=function(){return this.value};w.prototype.toString=function(){return this.value+""};w.prototype.toJSON=function(){return this.value};w.prototype.peek=function(){var e=m;m=void 0;try{return this.value}finally{m=e}};Object.defineProperty(w.prototype,"value",{get:function(){var e=Qt(this);return e!==void 0&&(e.i=this.i),this.v},set:function(e){if(e!==this.v){if(yt>100)throw new Error("Cycle detected");this.v=e,this.i++,Z++,A++;try{for(var t=this.t;t!==void 0;t=t.x)t.t.N()}finally{gt()}}}});function H(e){return new w(e)}function te(e){for(var t=e.s;t!==void 0;t=t.n)if(t.S.i!==t.i||!t.S.h()||t.S.i!==t.i)return!0;return!1}function ee(e){for(var t=e.s;t!==void 0;t=t.n){var n=t.S.n;if(n!==void 0&&(t.r=n),t.S.n=t,t.i=-1,t.n===void 0){e.s=t;break}}}function ne(e){for(var t=e.s,n=void 0;t!==void 0;){var i=t.p;t.i===-1?(t.S.U(t),i!==void 0&&(i.n=t.n),t.n!==void 0&&(t.n.p=i)):n=t,t.S.n=t.r,t.r!==void 0&&(t.r=void 0),t=i}e.s=n}function F(e){w.call(this,void 0),this.x=e,this.s=void 0,this.g=Z-1,this.f=4}(F.prototype=new w).h=function(){if(this.f&=-3,1&this.f)return!1;if((36&this.f)==32||(this.f&=-5,this.g===Z))return!0;if(this.g=Z,this.f|=1,this.i>0&&!te(this))return this.f&=-2,!0;var e=m;try{ee(this),m=this;var t=this.x();(16&this.f||this.v!==t||this.i===0)&&(this.v=t,this.f&=-17,this.i++)}catch(n){this.v=n,this.f|=16,this.i++}return m=e,ne(this),this.f&=-2,!0};F.prototype.S=function(e){if(this.t===void 0){this.f|=36;for(var t=this.s;t!==void 0;t=t.n)t.S.S(t)}w.prototype.S.call(this,e)};F.prototype.U=function(e){if(this.t!==void 0&&(w.prototype.U.call(this,e),this.t===void 0)){this.f&=-33;for(var t=this.s;t!==void 0;t=t.n)t.S.U(t)}};F.prototype.N=function(){if(!(2&this.f)){this.f|=6;for(var e=this.t;e!==void 0;e=e.x)e.t.N()}};Object.defineProperty(F.prototype,"value",{get:function(){if(1&this.f)throw new Error("Cycle detected");var e=Qt(this);if(this.h(),e!==void 0&&(e.i=this.i),16&this.f)throw this.v;return this.v}});function bt(e){return new F(e)}function ie(e){var t=e.u;if(e.u=void 0,typeof t=="function"){A++;var n=m;m=void 0;try{t()}catch(i){throw e.f&=-2,e.f|=8,kt(e),i}finally{m=n,gt()}}}function kt(e){for(var t=e.s;t!==void 0;t=t.n)t.S.U(t);e.x=void 0,e.s=void 0,ie(e)}function me(e){if(m!==this)throw new Error("Out-of-order effect");ne(this),m=e,this.f&=-2,8&this.f&&kt(this),gt()}function W(e){this.x=e,this.u=void 0,this.s=void 0,this.o=void 0,this.f=32}W.prototype.c=function(){var e=this.S();try{if(8&this.f||this.x===void 0)return;var t=this.x();typeof t=="function"&&(this.u=t)}finally{e()}};W.prototype.S=function(){if(1&this.f)throw new Error("Cycle detected");this.f|=1,this.f&=-9,ie(this),ee(this),A++;var e=m;return m=this,me.bind(this,e)};W.prototype.N=function(){2&this.f||(this.f|=2,this.o=V,V=this)};W.prototype.d=function(){this.f|=8,1&this.f||kt(this)};function R(e){var t=new W(e);try{t.c()}catch(n){throw t.d(),n}return t.d.bind(t)}var wt,St;function O(e,t){h[e]=t.bind(null,h[e]||function(){})}function Q(e){St&&St(),St=e&&e.S()}function re(e){var t=this,n=e.data,i=ge(n);i.value=n;var r=mt(function(){for(var o=t.__v;o=o.__;)if(o.__c){o.__c.__$f|=4;break}return t.__$u.c=function(){var s;!st(r.peek())&&((s=t.base)==null?void 0:s.nodeType)===3?t.base.data=r.peek():(t.__$f|=1,t.setState({}))},bt(function(){var s=i.value.value;return s===0?0:s===!0?"":s||""})},[]);return r.value}re.displayName="_st";Object.defineProperties(w.prototype,{constructor:{configurable:!0,value:void 0},type:{configurable:!0,value:re},props:{configurable:!0,get:function(){return{data:this}}},__b:{configurable:!0,value:1}});O("__b",function(e,t){if(typeof t.type=="string"){var n,i=t.props;for(var r in i)if(r!=="children"){var o=i[r];o instanceof w&&(n||(t.__np=n={}),n[r]=o,i[r]=o.peek())}}e(t)});O("__r",function(e,t){Q();var n,i=t.__c;i&&(i.__$f&=-2,(n=i.__$u)===void 0&&(i.__$u=n=function(r){var o;return R(function(){o=this}),o.c=function(){i.__$f|=1,i.setState({})},o}())),wt=i,Q(n),e(t)});O("__e",function(e,t,n,i){Q(),wt=void 0,e(t,n,i)});O("diffed",function(e,t){Q(),wt=void 0;var n;if(typeof t.type=="string"&&(n=t.__e)){var i=t.__np,r=t.props;if(i){var o=n.U;if(o)for(var s in o){var a=o[s];a!==void 0&&!(s in i)&&(a.d(),o[s]=void 0)}else n.U=o={};for(var f in i){var u=o[f],c=i[f];u===void 0?(u=ye(n,f,c,r),o[f]=u):u.o(c,r)}}}e(t)});function ye(e,t,n,i){var r=t in e&&e.ownerSVGElement===void 0,o=H(n);return{o:function(s,a){o.value=s,i=a},d:R(function(){var s=o.value.value;i[t]!==s&&(i[t]=s,r?e[t]=s:s?e.setAttribute(t,s):e.removeAttribute(t))})}}O("unmount",function(e,t){if(typeof t.type=="string"){var n=t.__e;if(n){var i=n.U;if(i){n.U=void 0;for(var r in i){var o=i[r];o&&o.d()}}}}else{var s=t.__c;if(s){var a=s.__$u;a&&(s.__$u=void 0,a.d())}}e(t)});O("__h",function(e,t,n,i){(i<3||i===9)&&(t.__$f|=2),e(t,n,i)});M.prototype.shouldComponentUpdate=function(e,t){var n=this.__$u;if(!(n&&n.s!==void 0||4&this.__$f)||3&this.__$f)return!0;for(var i in t)return!0;for(var r in e)if(r!=="__source"&&e[r]!==this.props[r])return!0;for(var o in this.props)if(!(o in e))return!0;return!1};function ge(e){return mt(function(){return H(e)},[])}var Et;(Et=Symbol.metadata)!==null&&Et!==void 0||(Symbol.metadata=Symbol.for("Symbol.metadata"));function tt(e){function t(n,i){let r=e?.name||i.name.toString();switch(console.debug(`[@Property] Property Name: ${r}`,{context:i}),Array.isArray(i.metadata[z])?i.metadata[z]=[...i.metadata[z],r]:i.metadata[z]=[r],i.kind){case"accessor":let{get:o}=n;return{get(){let s=o.call(this);return s?.value},set(s){let a=o.call(this);a&&(a.value=s),e?.reflect&&this.setAttribute(r,s)},init(s){return H(s)}};case"field":return function(s){return s}}}return t}function Ct(e){return function(n,i){let r=e?.name||i.name.toString(),{get:o}=n;if(console.debug(`[@State] Name: ${r}`,{value:n,context:i}),i.kind!=="accessor")throw new Error("@State() can only be used on accessor properties (e.g. @State accessor private myState: boolean = true;)");return{get(){let s=o.call(this);return s?.value},set(s){let a=o.call(this);a&&(a.value=s)},init(s){return H(s)}}}}var et=function(e,t,n,i,r,o){function s(d){if(d!==void 0&&typeof d!="function")throw new TypeError("Function expected");return d}for(var a=i.kind,f=a==="getter"?"get":a==="setter"?"set":"value",u=!t&&e?i.static?e:e.prototype:null,c=t||(u?Object.getOwnPropertyDescriptor(u,i.name):{}),_,g=!1,l=n.length-1;l>=0;l--){var y={};for(var k in i)y[k]=k==="access"?{}:i[k];for(var k in i.access)y.access[k]=i.access[k];y.addInitializer=function(d){if(g)throw new TypeError("Cannot add initializers after decoration has completed");o.push(s(d||null))};var v=(0,n[l])(a==="accessor"?{get:c.get,set:c.set}:c[f],y);if(a==="accessor"){if(v===void 0)continue;if(v===null||typeof v!="object")throw new TypeError("Object expected");(_=s(v.get))&&(c.get=_),(_=s(v.set))&&(c.set=_),(_=s(v.init))&&r.unshift(_)}else(_=s(v))&&(a==="field"?r.unshift(_):c[f]=_)}u&&Object.defineProperty(u,i.name,c),g=!0},D=function(e,t,n){for(var i=arguments.length>2,r=0;r<t.length;r++)n=i?t[r].call(e,n):t[r].call(e);return i?n:void 0},be=function(e,t,n){return typeof t=="symbol"&&(t=t.description?"[".concat(t.description,"]"):""),Object.defineProperty(e,"name",{configurable:!0,value:n?"".concat(n," ",t):t})},xt=function(e,t,n,i){if(n==="a"&&!i)throw new TypeError("Private accessor was defined without a getter");if(typeof t=="function"?e!==t||!i:!t.has(e))throw new TypeError("Cannot read private member from an object whose class did not declare it");return n==="m"?i:n==="a"?i.call(e):i?i.value:t.get(e)},Pt=function(e,t,n,i,r){if(i==="m")throw new TypeError("Private method is not writable");if(i==="a"&&!r)throw new TypeError("Private accessor was defined without a setter");if(typeof t=="function"?e!==t||!r:!t.has(e))throw new TypeError("Cannot write private member to an object whose class did not declare it");return i==="a"?r.call(e,n):r?r.value=n:t.set(e,n),n},on=(()=>{var e,t,n;let i=[dt({tag:"my-custom-element",style:"main.scss"})],r,o=[],s,a=HTMLElement,f,u=[],c=[],_,g=[],l=[],y,k=[],v=[];var d=s=class extends a{get size(){return xt(this,e,"f")}set size(p){Pt(this,e,p,"f")}get name(){return xt(this,t,"f")}set name(p){Pt(this,t,p,"f")}get loading(){return xt(this,n,"f")}set loading(p){Pt(this,n,p,"f")}constructor(){super(),e.set(this,D(this,u,"")),t.set(this,(D(this,c),D(this,g,""))),n.set(this,(D(this,l),D(this,k,!1))),D(this,v)}render(){return T(j,{children:[T("h1",{children:"hi"}),T(Wt,{size:this.size}),T("div",{children:this.loading?"Loaded":"Loading..."}),T("button",{onClick:()=>{console.debug("clicked"),this.name=`${this.size} is now`,this.loading=!this.loading},children:"Toggle"})]})}injectStyles(p){let E=document.createElement("style");E.textContent=`div {
-  background-color: aquamarine;
-}`,p.appendChild(E)}};return e=new WeakMap,t=new WeakMap,n=new WeakMap,be(s,"MyXElement"),(()=>{var p;let E=typeof Symbol=="function"&&Symbol.metadata?Object.create((p=a[Symbol.metadata])!==null&&p!==void 0?p:null):void 0;f=[tt()],_=[tt({reflect:!0})],y=[Ct()],et(s,null,f,{kind:"accessor",name:"size",static:!1,private:!1,access:{has:b=>"size"in b,get:b=>b.size,set:(b,P)=>{b.size=P}},metadata:E},u,c),et(s,null,_,{kind:"accessor",name:"name",static:!1,private:!1,access:{has:b=>"name"in b,get:b=>b.name,set:(b,P)=>{b.name=P}},metadata:E},g,l),et(s,null,y,{kind:"accessor",name:"loading",static:!1,private:!1,access:{has:b=>"loading"in b,get:b=>b.loading,set:(b,P)=>{b.loading=P}},metadata:E},k,v),et(null,r={value:s},i,{kind:"class",name:s.name,metadata:E},null,o),d=s=r.value,E&&Object.defineProperty(s,Symbol.metadata,{enumerable:!0,configurable:!0,writable:!0,value:E}),D(s,o)})(),d=s})();})();
+"use strict";
+(() => {
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/dist/preact.module.js
+  var n;
+  var l;
+  var u;
+  var t;
+  var i;
+  var o;
+  var r;
+  var f;
+  var e;
+  var c;
+  var s;
+  var a;
+  var h = {};
+  var v = [];
+  var p = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+  var y = Array.isArray;
+  function d(n3, l6) {
+    for (var u6 in l6)
+      n3[u6] = l6[u6];
+    return n3;
+  }
+  function _(n3) {
+    var l6 = n3.parentNode;
+    l6 && l6.removeChild(n3);
+  }
+  function g(l6, u6, t4) {
+    var i6, o5, r4, f6 = {};
+    for (r4 in u6)
+      "key" == r4 ? i6 = u6[r4] : "ref" == r4 ? o5 = u6[r4] : f6[r4] = u6[r4];
+    if (arguments.length > 2 && (f6.children = arguments.length > 3 ? n.call(arguments, 2) : t4), "function" == typeof l6 && null != l6.defaultProps)
+      for (r4 in l6.defaultProps)
+        void 0 === f6[r4] && (f6[r4] = l6.defaultProps[r4]);
+    return k(l6, f6, i6, o5, null);
+  }
+  function k(n3, t4, i6, o5, r4) {
+    var f6 = { type: n3, props: t4, key: i6, ref: o5, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: null == r4 ? ++u : r4, __i: -1, __u: 0 };
+    return null == r4 && null != l.vnode && l.vnode(f6), f6;
+  }
+  function m(n3) {
+    return n3.children;
+  }
+  function w(n3, l6) {
+    this.props = n3, this.context = l6;
+  }
+  function C(n3, l6) {
+    if (null == l6)
+      return n3.__ ? C(n3.__, n3.__i + 1) : null;
+    for (var u6; l6 < n3.__k.length; l6++)
+      if (null != (u6 = n3.__k[l6]) && null != u6.__e)
+        return u6.__e;
+    return "function" == typeof n3.type ? C(n3) : null;
+  }
+  function x(n3) {
+    var l6, u6;
+    if (null != (n3 = n3.__) && null != n3.__c) {
+      for (n3.__e = n3.__c.base = null, l6 = 0; l6 < n3.__k.length; l6++)
+        if (null != (u6 = n3.__k[l6]) && null != u6.__e) {
+          n3.__e = n3.__c.base = u6.__e;
+          break;
+        }
+      return x(n3);
+    }
+  }
+  function P(n3) {
+    (!n3.__d && (n3.__d = true) && i.push(n3) && !S.__r++ || o !== l.debounceRendering) && ((o = l.debounceRendering) || r)(S);
+  }
+  function S() {
+    var n3, u6, t4, o5, r4, e4, c5, s6;
+    for (i.sort(f); n3 = i.shift(); )
+      n3.__d && (u6 = i.length, o5 = void 0, e4 = (r4 = (t4 = n3).__v).__e, c5 = [], s6 = [], t4.__P && ((o5 = d({}, r4)).__v = r4.__v + 1, l.vnode && l.vnode(o5), O(t4.__P, o5, r4, t4.__n, void 0 !== t4.__P.ownerSVGElement, 32 & r4.__u ? [e4] : null, c5, null == e4 ? C(r4) : e4, !!(32 & r4.__u), s6), o5.__v = r4.__v, o5.__.__k[o5.__i] = o5, j(c5, o5, s6), o5.__e != e4 && x(o5)), i.length > u6 && i.sort(f));
+    S.__r = 0;
+  }
+  function $(n3, l6, u6, t4, i6, o5, r4, f6, e4, c5, s6) {
+    var a5, p5, y4, d6, _5, g3 = t4 && t4.__k || v, k3 = l6.length;
+    for (u6.__d = e4, I(u6, l6, g3), e4 = u6.__d, a5 = 0; a5 < k3; a5++)
+      null != (y4 = u6.__k[a5]) && "boolean" != typeof y4 && "function" != typeof y4 && (p5 = -1 === y4.__i ? h : g3[y4.__i] || h, y4.__i = a5, O(n3, y4, p5, i6, o5, r4, f6, e4, c5, s6), d6 = y4.__e, y4.ref && p5.ref != y4.ref && (p5.ref && N(p5.ref, null, y4), s6.push(y4.ref, y4.__c || d6, y4)), null == _5 && null != d6 && (_5 = d6), 65536 & y4.__u || p5.__k === y4.__k ? (e4 && !e4.isConnected && (e4 = C(p5)), e4 = H(y4, e4, n3)) : "function" == typeof y4.type && void 0 !== y4.__d ? e4 = y4.__d : d6 && (e4 = d6.nextSibling), y4.__d = void 0, y4.__u &= -196609);
+    u6.__d = e4, u6.__e = _5;
+  }
+  function I(n3, l6, u6) {
+    var t4, i6, o5, r4, f6, e4 = l6.length, c5 = u6.length, s6 = c5, a5 = 0;
+    for (n3.__k = [], t4 = 0; t4 < e4; t4++)
+      r4 = t4 + a5, null != (i6 = n3.__k[t4] = null == (i6 = l6[t4]) || "boolean" == typeof i6 || "function" == typeof i6 ? null : "string" == typeof i6 || "number" == typeof i6 || "bigint" == typeof i6 || i6.constructor == String ? k(null, i6, null, null, null) : y(i6) ? k(m, { children: i6 }, null, null, null) : void 0 === i6.constructor && i6.__b > 0 ? k(i6.type, i6.props, i6.key, i6.ref ? i6.ref : null, i6.__v) : i6) ? (i6.__ = n3, i6.__b = n3.__b + 1, f6 = A(i6, u6, r4, s6), i6.__i = f6, o5 = null, -1 !== f6 && (s6--, (o5 = u6[f6]) && (o5.__u |= 131072)), null == o5 || null === o5.__v ? (-1 == f6 && a5--, "function" != typeof i6.type && (i6.__u |= 65536)) : f6 !== r4 && (f6 === r4 + 1 ? a5++ : f6 > r4 ? s6 > e4 - r4 ? a5 += f6 - r4 : a5-- : f6 < r4 ? f6 == r4 - 1 && (a5 = f6 - r4) : a5 = 0, f6 !== t4 + a5 && (i6.__u |= 65536))) : (o5 = u6[r4]) && null == o5.key && o5.__e && 0 == (131072 & o5.__u) && (o5.__e == n3.__d && (n3.__d = C(o5)), V(o5, o5, false), u6[r4] = null, s6--);
+    if (s6)
+      for (t4 = 0; t4 < c5; t4++)
+        null != (o5 = u6[t4]) && 0 == (131072 & o5.__u) && (o5.__e == n3.__d && (n3.__d = C(o5)), V(o5, o5));
+  }
+  function H(n3, l6, u6) {
+    var t4, i6;
+    if ("function" == typeof n3.type) {
+      for (t4 = n3.__k, i6 = 0; t4 && i6 < t4.length; i6++)
+        t4[i6] && (t4[i6].__ = n3, l6 = H(t4[i6], l6, u6));
+      return l6;
+    }
+    n3.__e != l6 && (u6.insertBefore(n3.__e, l6 || null), l6 = n3.__e);
+    do {
+      l6 = l6 && l6.nextSibling;
+    } while (null != l6 && 8 === l6.nodeType);
+    return l6;
+  }
+  function A(n3, l6, u6, t4) {
+    var i6 = n3.key, o5 = n3.type, r4 = u6 - 1, f6 = u6 + 1, e4 = l6[u6];
+    if (null === e4 || e4 && i6 == e4.key && o5 === e4.type && 0 == (131072 & e4.__u))
+      return u6;
+    if (t4 > (null != e4 && 0 == (131072 & e4.__u) ? 1 : 0))
+      for (; r4 >= 0 || f6 < l6.length; ) {
+        if (r4 >= 0) {
+          if ((e4 = l6[r4]) && 0 == (131072 & e4.__u) && i6 == e4.key && o5 === e4.type)
+            return r4;
+          r4--;
+        }
+        if (f6 < l6.length) {
+          if ((e4 = l6[f6]) && 0 == (131072 & e4.__u) && i6 == e4.key && o5 === e4.type)
+            return f6;
+          f6++;
+        }
+      }
+    return -1;
+  }
+  function F(n3, l6, u6) {
+    "-" === l6[0] ? n3.setProperty(l6, null == u6 ? "" : u6) : n3[l6] = null == u6 ? "" : "number" != typeof u6 || p.test(l6) ? u6 : u6 + "px";
+  }
+  function L(n3, l6, u6, t4, i6) {
+    var o5;
+    n:
+      if ("style" === l6)
+        if ("string" == typeof u6)
+          n3.style.cssText = u6;
+        else {
+          if ("string" == typeof t4 && (n3.style.cssText = t4 = ""), t4)
+            for (l6 in t4)
+              u6 && l6 in u6 || F(n3.style, l6, "");
+          if (u6)
+            for (l6 in u6)
+              t4 && u6[l6] === t4[l6] || F(n3.style, l6, u6[l6]);
+        }
+      else if ("o" === l6[0] && "n" === l6[1])
+        o5 = l6 !== (l6 = l6.replace(/(PointerCapture)$|Capture$/i, "$1")), l6 = l6.toLowerCase() in n3 || "onFocusOut" === l6 || "onFocusIn" === l6 ? l6.toLowerCase().slice(2) : l6.slice(2), n3.l || (n3.l = {}), n3.l[l6 + o5] = u6, u6 ? t4 ? u6.u = t4.u : (u6.u = e, n3.addEventListener(l6, o5 ? s : c, o5)) : n3.removeEventListener(l6, o5 ? s : c, o5);
+      else {
+        if (i6)
+          l6 = l6.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+        else if ("width" != l6 && "height" != l6 && "href" != l6 && "list" != l6 && "form" != l6 && "tabIndex" != l6 && "download" != l6 && "rowSpan" != l6 && "colSpan" != l6 && "role" != l6 && l6 in n3)
+          try {
+            n3[l6] = null == u6 ? "" : u6;
+            break n;
+          } catch (n4) {
+          }
+        "function" == typeof u6 || (null == u6 || false === u6 && "-" !== l6[4] ? n3.removeAttribute(l6) : n3.setAttribute(l6, u6));
+      }
+  }
+  function M(n3) {
+    return function(u6) {
+      if (this.l) {
+        var t4 = this.l[u6.type + n3];
+        if (null == u6.t)
+          u6.t = e++;
+        else if (u6.t < t4.u)
+          return;
+        return t4(l.event ? l.event(u6) : u6);
+      }
+    };
+  }
+  function O(n3, u6, t4, i6, o5, r4, f6, e4, c5, s6) {
+    var a5, h5, v6, p5, _5, g3, k3, b3, C3, x2, P2, S2, I2, H2, T, A2 = u6.type;
+    if (void 0 !== u6.constructor)
+      return null;
+    128 & t4.__u && (c5 = !!(32 & t4.__u), r4 = [e4 = u6.__e = t4.__e]), (a5 = l.__b) && a5(u6);
+    n:
+      if ("function" == typeof A2)
+        try {
+          if (b3 = u6.props, C3 = (a5 = A2.contextType) && i6[a5.__c], x2 = a5 ? C3 ? C3.props.value : a5.__ : i6, t4.__c ? k3 = (h5 = u6.__c = t4.__c).__ = h5.__E : ("prototype" in A2 && A2.prototype.render ? u6.__c = h5 = new A2(b3, x2) : (u6.__c = h5 = new w(b3, x2), h5.constructor = A2, h5.render = q), C3 && C3.sub(h5), h5.props = b3, h5.state || (h5.state = {}), h5.context = x2, h5.__n = i6, v6 = h5.__d = true, h5.__h = [], h5._sb = []), null == h5.__s && (h5.__s = h5.state), null != A2.getDerivedStateFromProps && (h5.__s == h5.state && (h5.__s = d({}, h5.__s)), d(h5.__s, A2.getDerivedStateFromProps(b3, h5.__s))), p5 = h5.props, _5 = h5.state, h5.__v = u6, v6)
+            null == A2.getDerivedStateFromProps && null != h5.componentWillMount && h5.componentWillMount(), null != h5.componentDidMount && h5.__h.push(h5.componentDidMount);
+          else {
+            if (null == A2.getDerivedStateFromProps && b3 !== p5 && null != h5.componentWillReceiveProps && h5.componentWillReceiveProps(b3, x2), !h5.__e && (null != h5.shouldComponentUpdate && false === h5.shouldComponentUpdate(b3, h5.__s, x2) || u6.__v === t4.__v)) {
+              for (u6.__v !== t4.__v && (h5.props = b3, h5.state = h5.__s, h5.__d = false), u6.__e = t4.__e, u6.__k = t4.__k, u6.__k.forEach(function(n4) {
+                n4 && (n4.__ = u6);
+              }), P2 = 0; P2 < h5._sb.length; P2++)
+                h5.__h.push(h5._sb[P2]);
+              h5._sb = [], h5.__h.length && f6.push(h5);
+              break n;
+            }
+            null != h5.componentWillUpdate && h5.componentWillUpdate(b3, h5.__s, x2), null != h5.componentDidUpdate && h5.__h.push(function() {
+              h5.componentDidUpdate(p5, _5, g3);
+            });
+          }
+          if (h5.context = x2, h5.props = b3, h5.__P = n3, h5.__e = false, S2 = l.__r, I2 = 0, "prototype" in A2 && A2.prototype.render) {
+            for (h5.state = h5.__s, h5.__d = false, S2 && S2(u6), a5 = h5.render(h5.props, h5.state, h5.context), H2 = 0; H2 < h5._sb.length; H2++)
+              h5.__h.push(h5._sb[H2]);
+            h5._sb = [];
+          } else
+            do {
+              h5.__d = false, S2 && S2(u6), a5 = h5.render(h5.props, h5.state, h5.context), h5.state = h5.__s;
+            } while (h5.__d && ++I2 < 25);
+          h5.state = h5.__s, null != h5.getChildContext && (i6 = d(d({}, i6), h5.getChildContext())), v6 || null == h5.getSnapshotBeforeUpdate || (g3 = h5.getSnapshotBeforeUpdate(p5, _5)), $(n3, y(T = null != a5 && a5.type === m && null == a5.key ? a5.props.children : a5) ? T : [T], u6, t4, i6, o5, r4, f6, e4, c5, s6), h5.base = u6.__e, u6.__u &= -161, h5.__h.length && f6.push(h5), k3 && (h5.__E = h5.__ = null);
+        } catch (n4) {
+          u6.__v = null, c5 || null != r4 ? (u6.__e = e4, u6.__u |= c5 ? 160 : 32, r4[r4.indexOf(e4)] = null) : (u6.__e = t4.__e, u6.__k = t4.__k), l.__e(n4, u6, t4);
+        }
+      else
+        null == r4 && u6.__v === t4.__v ? (u6.__k = t4.__k, u6.__e = t4.__e) : u6.__e = z(t4.__e, u6, t4, i6, o5, r4, f6, c5, s6);
+    (a5 = l.diffed) && a5(u6);
+  }
+  function j(n3, u6, t4) {
+    u6.__d = void 0;
+    for (var i6 = 0; i6 < t4.length; i6++)
+      N(t4[i6], t4[++i6], t4[++i6]);
+    l.__c && l.__c(u6, n3), n3.some(function(u7) {
+      try {
+        n3 = u7.__h, u7.__h = [], n3.some(function(n4) {
+          n4.call(u7);
+        });
+      } catch (n4) {
+        l.__e(n4, u7.__v);
+      }
+    });
+  }
+  function z(l6, u6, t4, i6, o5, r4, f6, e4, c5) {
+    var s6, a5, v6, p5, d6, g3, k3, b3 = t4.props, m4 = u6.props, w5 = u6.type;
+    if ("svg" === w5 && (o5 = true), null != r4) {
+      for (s6 = 0; s6 < r4.length; s6++)
+        if ((d6 = r4[s6]) && "setAttribute" in d6 == !!w5 && (w5 ? d6.localName === w5 : 3 === d6.nodeType)) {
+          l6 = d6, r4[s6] = null;
+          break;
+        }
+    }
+    if (null == l6) {
+      if (null === w5)
+        return document.createTextNode(m4);
+      l6 = o5 ? document.createElementNS("http://www.w3.org/2000/svg", w5) : document.createElement(w5, m4.is && m4), r4 = null, e4 = false;
+    }
+    if (null === w5)
+      b3 === m4 || e4 && l6.data === m4 || (l6.data = m4);
+    else {
+      if (r4 = r4 && n.call(l6.childNodes), b3 = t4.props || h, !e4 && null != r4)
+        for (b3 = {}, s6 = 0; s6 < l6.attributes.length; s6++)
+          b3[(d6 = l6.attributes[s6]).name] = d6.value;
+      for (s6 in b3)
+        if (d6 = b3[s6], "children" == s6)
+          ;
+        else if ("dangerouslySetInnerHTML" == s6)
+          v6 = d6;
+        else if ("key" !== s6 && !(s6 in m4)) {
+          if ("value" == s6 && "defaultValue" in m4 || "checked" == s6 && "defaultChecked" in m4)
+            continue;
+          L(l6, s6, null, d6, o5);
+        }
+      for (s6 in m4)
+        d6 = m4[s6], "children" == s6 ? p5 = d6 : "dangerouslySetInnerHTML" == s6 ? a5 = d6 : "value" == s6 ? g3 = d6 : "checked" == s6 ? k3 = d6 : "key" === s6 || e4 && "function" != typeof d6 || b3[s6] === d6 || L(l6, s6, d6, b3[s6], o5);
+      if (a5)
+        e4 || v6 && (a5.__html === v6.__html || a5.__html === l6.innerHTML) || (l6.innerHTML = a5.__html), u6.__k = [];
+      else if (v6 && (l6.innerHTML = ""), $(l6, y(p5) ? p5 : [p5], u6, t4, i6, o5 && "foreignObject" !== w5, r4, f6, r4 ? r4[0] : t4.__k && C(t4, 0), e4, c5), null != r4)
+        for (s6 = r4.length; s6--; )
+          null != r4[s6] && _(r4[s6]);
+      e4 || (s6 = "value", void 0 !== g3 && (g3 !== l6[s6] || "progress" === w5 && !g3 || "option" === w5 && g3 !== b3[s6]) && L(l6, s6, g3, b3[s6], false), s6 = "checked", void 0 !== k3 && k3 !== l6[s6] && L(l6, s6, k3, b3[s6], false));
+    }
+    return l6;
+  }
+  function N(n3, u6, t4) {
+    try {
+      "function" == typeof n3 ? n3(u6) : n3.current = u6;
+    } catch (n4) {
+      l.__e(n4, t4);
+    }
+  }
+  function V(n3, u6, t4) {
+    var i6, o5;
+    if (l.unmount && l.unmount(n3), (i6 = n3.ref) && (i6.current && i6.current !== n3.__e || N(i6, null, u6)), null != (i6 = n3.__c)) {
+      if (i6.componentWillUnmount)
+        try {
+          i6.componentWillUnmount();
+        } catch (n4) {
+          l.__e(n4, u6);
+        }
+      i6.base = i6.__P = null;
+    }
+    if (i6 = n3.__k)
+      for (o5 = 0; o5 < i6.length; o5++)
+        i6[o5] && V(i6[o5], u6, t4 || "function" != typeof n3.type);
+    t4 || null == n3.__e || _(n3.__e), n3.__c = n3.__ = n3.__e = n3.__d = void 0;
+  }
+  function q(n3, l6, u6) {
+    return this.constructor(n3, u6);
+  }
+  function B(u6, t4, i6) {
+    var o5, r4, f6, e4;
+    l.__ && l.__(u6, t4), r4 = (o5 = "function" == typeof i6) ? null : i6 && i6.__k || t4.__k, f6 = [], e4 = [], O(t4, u6 = (!o5 && i6 || t4).__k = g(m, null, [u6]), r4 || h, h, void 0 !== t4.ownerSVGElement, !o5 && i6 ? [i6] : r4 ? null : t4.firstChild ? n.call(t4.childNodes) : null, f6, !o5 && i6 ? i6 : r4 ? r4.__e : t4.firstChild, o5, e4), j(f6, u6, e4);
+  }
+  n = v.slice, l = { __e: function(n3, l6, u6, t4) {
+    for (var i6, o5, r4; l6 = l6.__; )
+      if ((i6 = l6.__c) && !i6.__)
+        try {
+          if ((o5 = i6.constructor) && null != o5.getDerivedStateFromError && (i6.setState(o5.getDerivedStateFromError(n3)), r4 = i6.__d), null != i6.componentDidCatch && (i6.componentDidCatch(n3, t4 || {}), r4 = i6.__d), r4)
+            return i6.__E = i6;
+        } catch (l7) {
+          n3 = l7;
+        }
+    throw n3;
+  } }, u = 0, t = function(n3) {
+    return null != n3 && null == n3.constructor;
+  }, w.prototype.setState = function(n3, l6) {
+    var u6;
+    u6 = null != this.__s && this.__s !== this.state ? this.__s : this.__s = d({}, this.state), "function" == typeof n3 && (n3 = n3(d({}, u6), this.props)), n3 && d(u6, n3), null != n3 && this.__v && (l6 && this._sb.push(l6), P(this));
+  }, w.prototype.forceUpdate = function(n3) {
+    this.__v && (this.__e = true, n3 && this.__h.push(n3), P(this));
+  }, w.prototype.render = m, i = [], r = "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, f = function(n3, l6) {
+    return n3.__v.__b - l6.__v.__b;
+  }, S.__r = 0, e = 0, c = M(false), s = M(true), a = 0;
+
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js
+  var f2 = 0;
+  var i2 = Array.isArray;
+  function u2(e4, t4, n3, o5, i6, u6) {
+    t4 || (t4 = {});
+    var a5, c5, p5 = t4;
+    if ("ref" in p5)
+      for (c5 in p5 = {}, t4)
+        "ref" == c5 ? a5 = t4[c5] : p5[c5] = t4[c5];
+    var l6 = { type: e4, props: p5, key: n3, ref: a5, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, constructor: void 0, __v: --f2, __i: -1, __u: 0, __source: i6, __self: u6 };
+    if ("function" == typeof e4 && (a5 = e4.defaultProps))
+      for (c5 in a5)
+        void 0 === p5[c5] && (p5[c5] = a5[c5]);
+    return l.vnode && l.vnode(l6), l6;
+  }
+
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/hooks/dist/hooks.module.js
+  var t2;
+  var r2;
+  var u3;
+  var i3;
+  var o2 = 0;
+  var f3 = [];
+  var c2 = [];
+  var e2 = l;
+  var a2 = e2.__b;
+  var v2 = e2.__r;
+  var l2 = e2.diffed;
+  var m2 = e2.__c;
+  var s2 = e2.unmount;
+  var d2 = e2.__;
+  function h2(n3, t4) {
+    e2.__h && e2.__h(r2, n3, o2 || t4), o2 = 0;
+    var u6 = r2.__H || (r2.__H = { __: [], __h: [] });
+    return n3 >= u6.__.length && u6.__.push({ __V: c2 }), u6.__[n3];
+  }
+  function q2(n3, r4) {
+    var u6 = h2(t2++, 7);
+    return C2(u6.__H, r4) ? (u6.__V = n3(), u6.i = r4, u6.__h = n3, u6.__V) : u6.__;
+  }
+  function j2() {
+    for (var n3; n3 = f3.shift(); )
+      if (n3.__P && n3.__H)
+        try {
+          n3.__H.__h.forEach(z2), n3.__H.__h.forEach(B2), n3.__H.__h = [];
+        } catch (t4) {
+          n3.__H.__h = [], e2.__e(t4, n3.__v);
+        }
+  }
+  e2.__b = function(n3) {
+    r2 = null, a2 && a2(n3);
+  }, e2.__ = function(n3, t4) {
+    n3 && t4.__k && t4.__k.__m && (n3.__m = t4.__k.__m), d2 && d2(n3, t4);
+  }, e2.__r = function(n3) {
+    v2 && v2(n3), t2 = 0;
+    var i6 = (r2 = n3.__c).__H;
+    i6 && (u3 === r2 ? (i6.__h = [], r2.__h = [], i6.__.forEach(function(n4) {
+      n4.__N && (n4.__ = n4.__N), n4.__V = c2, n4.__N = n4.i = void 0;
+    })) : (i6.__h.forEach(z2), i6.__h.forEach(B2), i6.__h = [], t2 = 0)), u3 = r2;
+  }, e2.diffed = function(n3) {
+    l2 && l2(n3);
+    var t4 = n3.__c;
+    t4 && t4.__H && (t4.__H.__h.length && (1 !== f3.push(t4) && i3 === e2.requestAnimationFrame || ((i3 = e2.requestAnimationFrame) || w2)(j2)), t4.__H.__.forEach(function(n4) {
+      n4.i && (n4.__H = n4.i), n4.__V !== c2 && (n4.__ = n4.__V), n4.i = void 0, n4.__V = c2;
+    })), u3 = r2 = null;
+  }, e2.__c = function(n3, t4) {
+    t4.some(function(n4) {
+      try {
+        n4.__h.forEach(z2), n4.__h = n4.__h.filter(function(n5) {
+          return !n5.__ || B2(n5);
+        });
+      } catch (r4) {
+        t4.some(function(n5) {
+          n5.__h && (n5.__h = []);
+        }), t4 = [], e2.__e(r4, n4.__v);
+      }
+    }), m2 && m2(n3, t4);
+  }, e2.unmount = function(n3) {
+    s2 && s2(n3);
+    var t4, r4 = n3.__c;
+    r4 && r4.__H && (r4.__H.__.forEach(function(n4) {
+      try {
+        z2(n4);
+      } catch (n5) {
+        t4 = n5;
+      }
+    }), r4.__H = void 0, t4 && e2.__e(t4, r4.__v));
+  };
+  var k2 = "function" == typeof requestAnimationFrame;
+  function w2(n3) {
+    var t4, r4 = function() {
+      clearTimeout(u6), k2 && cancelAnimationFrame(t4), setTimeout(n3);
+    }, u6 = setTimeout(r4, 100);
+    k2 && (t4 = requestAnimationFrame(r4));
+  }
+  function z2(n3) {
+    var t4 = r2, u6 = n3.__c;
+    "function" == typeof u6 && (n3.__c = void 0, u6()), r2 = t4;
+  }
+  function B2(n3) {
+    var t4 = r2;
+    n3.__c = n3.__(), r2 = t4;
+  }
+  function C2(n3, t4) {
+    return !n3 || n3.length !== t4.length || t4.some(function(t5, r4) {
+      return t5 !== n3[r4];
+    });
+  }
+
+  // ../../node_modules/.pnpm/@preact+signals-core@1.6.0/node_modules/@preact/signals-core/dist/signals-core.module.js
+  var i4 = Symbol.for("preact-signals");
+  function t3() {
+    if (!(s3 > 1)) {
+      var i6, t4 = false;
+      while (void 0 !== h3) {
+        var r4 = h3;
+        h3 = void 0;
+        f4++;
+        while (void 0 !== r4) {
+          var o5 = r4.o;
+          r4.o = void 0;
+          r4.f &= -3;
+          if (!(8 & r4.f) && c3(r4))
+            try {
+              r4.c();
+            } catch (r5) {
+              if (!t4) {
+                i6 = r5;
+                t4 = true;
+              }
+            }
+          r4 = o5;
+        }
+      }
+      f4 = 0;
+      s3--;
+      if (t4)
+        throw i6;
+    } else
+      s3--;
+  }
+  var o3 = void 0;
+  var h3 = void 0;
+  var s3 = 0;
+  var f4 = 0;
+  var v3 = 0;
+  function e3(i6) {
+    if (void 0 !== o3) {
+      var t4 = i6.n;
+      if (void 0 === t4 || t4.t !== o3) {
+        t4 = { i: 0, S: i6, p: o3.s, n: void 0, t: o3, e: void 0, x: void 0, r: t4 };
+        if (void 0 !== o3.s)
+          o3.s.n = t4;
+        o3.s = t4;
+        i6.n = t4;
+        if (32 & o3.f)
+          i6.S(t4);
+        return t4;
+      } else if (-1 === t4.i) {
+        t4.i = 0;
+        if (void 0 !== t4.n) {
+          t4.n.p = t4.p;
+          if (void 0 !== t4.p)
+            t4.p.n = t4.n;
+          t4.p = o3.s;
+          t4.n = void 0;
+          o3.s.n = t4;
+          o3.s = t4;
+        }
+        return t4;
+      }
+    }
+  }
+  function u4(i6) {
+    this.v = i6;
+    this.i = 0;
+    this.n = void 0;
+    this.t = void 0;
+  }
+  u4.prototype.brand = i4;
+  u4.prototype.h = function() {
+    return true;
+  };
+  u4.prototype.S = function(i6) {
+    if (this.t !== i6 && void 0 === i6.e) {
+      i6.x = this.t;
+      if (void 0 !== this.t)
+        this.t.e = i6;
+      this.t = i6;
+    }
+  };
+  u4.prototype.U = function(i6) {
+    if (void 0 !== this.t) {
+      var t4 = i6.e, r4 = i6.x;
+      if (void 0 !== t4) {
+        t4.x = r4;
+        i6.e = void 0;
+      }
+      if (void 0 !== r4) {
+        r4.e = t4;
+        i6.x = void 0;
+      }
+      if (i6 === this.t)
+        this.t = r4;
+    }
+  };
+  u4.prototype.subscribe = function(i6) {
+    var t4 = this;
+    return E(function() {
+      var r4 = t4.value, n3 = o3;
+      o3 = void 0;
+      try {
+        i6(r4);
+      } finally {
+        o3 = n3;
+      }
+    });
+  };
+  u4.prototype.valueOf = function() {
+    return this.value;
+  };
+  u4.prototype.toString = function() {
+    return this.value + "";
+  };
+  u4.prototype.toJSON = function() {
+    return this.value;
+  };
+  u4.prototype.peek = function() {
+    var i6 = o3;
+    o3 = void 0;
+    try {
+      return this.value;
+    } finally {
+      o3 = i6;
+    }
+  };
+  Object.defineProperty(u4.prototype, "value", { get: function() {
+    var i6 = e3(this);
+    if (void 0 !== i6)
+      i6.i = this.i;
+    return this.v;
+  }, set: function(i6) {
+    if (i6 !== this.v) {
+      if (f4 > 100)
+        throw new Error("Cycle detected");
+      this.v = i6;
+      this.i++;
+      v3++;
+      s3++;
+      try {
+        for (var r4 = this.t; void 0 !== r4; r4 = r4.x)
+          r4.t.N();
+      } finally {
+        t3();
+      }
+    }
+  } });
+  function d3(i6) {
+    return new u4(i6);
+  }
+  function c3(i6) {
+    for (var t4 = i6.s; void 0 !== t4; t4 = t4.n)
+      if (t4.S.i !== t4.i || !t4.S.h() || t4.S.i !== t4.i)
+        return true;
+    return false;
+  }
+  function a3(i6) {
+    for (var t4 = i6.s; void 0 !== t4; t4 = t4.n) {
+      var r4 = t4.S.n;
+      if (void 0 !== r4)
+        t4.r = r4;
+      t4.S.n = t4;
+      t4.i = -1;
+      if (void 0 === t4.n) {
+        i6.s = t4;
+        break;
+      }
+    }
+  }
+  function l3(i6) {
+    var t4 = i6.s, r4 = void 0;
+    while (void 0 !== t4) {
+      var o5 = t4.p;
+      if (-1 === t4.i) {
+        t4.S.U(t4);
+        if (void 0 !== o5)
+          o5.n = t4.n;
+        if (void 0 !== t4.n)
+          t4.n.p = o5;
+      } else
+        r4 = t4;
+      t4.S.n = t4.r;
+      if (void 0 !== t4.r)
+        t4.r = void 0;
+      t4 = o5;
+    }
+    i6.s = r4;
+  }
+  function y2(i6) {
+    u4.call(this, void 0);
+    this.x = i6;
+    this.s = void 0;
+    this.g = v3 - 1;
+    this.f = 4;
+  }
+  (y2.prototype = new u4()).h = function() {
+    this.f &= -3;
+    if (1 & this.f)
+      return false;
+    if (32 == (36 & this.f))
+      return true;
+    this.f &= -5;
+    if (this.g === v3)
+      return true;
+    this.g = v3;
+    this.f |= 1;
+    if (this.i > 0 && !c3(this)) {
+      this.f &= -2;
+      return true;
+    }
+    var i6 = o3;
+    try {
+      a3(this);
+      o3 = this;
+      var t4 = this.x();
+      if (16 & this.f || this.v !== t4 || 0 === this.i) {
+        this.v = t4;
+        this.f &= -17;
+        this.i++;
+      }
+    } catch (i7) {
+      this.v = i7;
+      this.f |= 16;
+      this.i++;
+    }
+    o3 = i6;
+    l3(this);
+    this.f &= -2;
+    return true;
+  };
+  y2.prototype.S = function(i6) {
+    if (void 0 === this.t) {
+      this.f |= 36;
+      for (var t4 = this.s; void 0 !== t4; t4 = t4.n)
+        t4.S.S(t4);
+    }
+    u4.prototype.S.call(this, i6);
+  };
+  y2.prototype.U = function(i6) {
+    if (void 0 !== this.t) {
+      u4.prototype.U.call(this, i6);
+      if (void 0 === this.t) {
+        this.f &= -33;
+        for (var t4 = this.s; void 0 !== t4; t4 = t4.n)
+          t4.S.U(t4);
+      }
+    }
+  };
+  y2.prototype.N = function() {
+    if (!(2 & this.f)) {
+      this.f |= 6;
+      for (var i6 = this.t; void 0 !== i6; i6 = i6.x)
+        i6.t.N();
+    }
+  };
+  Object.defineProperty(y2.prototype, "value", { get: function() {
+    if (1 & this.f)
+      throw new Error("Cycle detected");
+    var i6 = e3(this);
+    this.h();
+    if (void 0 !== i6)
+      i6.i = this.i;
+    if (16 & this.f)
+      throw this.v;
+    return this.v;
+  } });
+  function w3(i6) {
+    return new y2(i6);
+  }
+  function _2(i6) {
+    var r4 = i6.u;
+    i6.u = void 0;
+    if ("function" == typeof r4) {
+      s3++;
+      var n3 = o3;
+      o3 = void 0;
+      try {
+        r4();
+      } catch (t4) {
+        i6.f &= -2;
+        i6.f |= 8;
+        g2(i6);
+        throw t4;
+      } finally {
+        o3 = n3;
+        t3();
+      }
+    }
+  }
+  function g2(i6) {
+    for (var t4 = i6.s; void 0 !== t4; t4 = t4.n)
+      t4.S.U(t4);
+    i6.x = void 0;
+    i6.s = void 0;
+    _2(i6);
+  }
+  function p2(i6) {
+    if (o3 !== this)
+      throw new Error("Out-of-order effect");
+    l3(this);
+    o3 = i6;
+    this.f &= -2;
+    if (8 & this.f)
+      g2(this);
+    t3();
+  }
+  function b(i6) {
+    this.x = i6;
+    this.u = void 0;
+    this.s = void 0;
+    this.o = void 0;
+    this.f = 32;
+  }
+  b.prototype.c = function() {
+    var i6 = this.S();
+    try {
+      if (8 & this.f)
+        return;
+      if (void 0 === this.x)
+        return;
+      var t4 = this.x();
+      if ("function" == typeof t4)
+        this.u = t4;
+    } finally {
+      i6();
+    }
+  };
+  b.prototype.S = function() {
+    if (1 & this.f)
+      throw new Error("Cycle detected");
+    this.f |= 1;
+    this.f &= -9;
+    _2(this);
+    a3(this);
+    s3++;
+    var i6 = o3;
+    o3 = this;
+    return p2.bind(this, i6);
+  };
+  b.prototype.N = function() {
+    if (!(2 & this.f)) {
+      this.f |= 2;
+      this.o = h3;
+      h3 = this;
+    }
+  };
+  b.prototype.d = function() {
+    this.f |= 8;
+    if (!(1 & this.f))
+      g2(this);
+  };
+  function E(i6) {
+    var t4 = new b(i6);
+    try {
+      t4.c();
+    } catch (i7) {
+      t4.d();
+      throw i7;
+    }
+    return t4.d.bind(t4);
+  }
+
+  // ../../node_modules/.pnpm/@preact+signals@1.2.3_preact@10.21.0/node_modules/@preact/signals/dist/signals.module.js
+  var v4;
+  var s4;
+  function l4(n3, i6) {
+    l[n3] = i6.bind(null, l[n3] || function() {
+    });
+  }
+  function d4(n3) {
+    if (s4)
+      s4();
+    s4 = n3 && n3.S();
+  }
+  function p3(n3) {
+    var r4 = this, f6 = n3.data, o5 = useSignal(f6);
+    o5.value = f6;
+    var e4 = q2(function() {
+      var n4 = r4.__v;
+      while (n4 = n4.__)
+        if (n4.__c) {
+          n4.__c.__$f |= 4;
+          break;
+        }
+      r4.__$u.c = function() {
+        var n5;
+        if (!t(e4.peek()) && 3 === (null == (n5 = r4.base) ? void 0 : n5.nodeType))
+          r4.base.data = e4.peek();
+        else {
+          r4.__$f |= 1;
+          r4.setState({});
+        }
+      };
+      return w3(function() {
+        var n5 = o5.value.value;
+        return 0 === n5 ? 0 : true === n5 ? "" : n5 || "";
+      });
+    }, []);
+    return e4.value;
+  }
+  p3.displayName = "_st";
+  Object.defineProperties(u4.prototype, { constructor: { configurable: true, value: void 0 }, type: { configurable: true, value: p3 }, props: { configurable: true, get: function() {
+    return { data: this };
+  } }, __b: { configurable: true, value: 1 } });
+  l4("__b", function(n3, r4) {
+    if ("string" == typeof r4.type) {
+      var i6, t4 = r4.props;
+      for (var f6 in t4)
+        if ("children" !== f6) {
+          var o5 = t4[f6];
+          if (o5 instanceof u4) {
+            if (!i6)
+              r4.__np = i6 = {};
+            i6[f6] = o5;
+            t4[f6] = o5.peek();
+          }
+        }
+    }
+    n3(r4);
+  });
+  l4("__r", function(n3, r4) {
+    d4();
+    var i6, t4 = r4.__c;
+    if (t4) {
+      t4.__$f &= -2;
+      if (void 0 === (i6 = t4.__$u))
+        t4.__$u = i6 = function(n4) {
+          var r5;
+          E(function() {
+            r5 = this;
+          });
+          r5.c = function() {
+            t4.__$f |= 1;
+            t4.setState({});
+          };
+          return r5;
+        }();
+    }
+    v4 = t4;
+    d4(i6);
+    n3(r4);
+  });
+  l4("__e", function(n3, r4, i6, t4) {
+    d4();
+    v4 = void 0;
+    n3(r4, i6, t4);
+  });
+  l4("diffed", function(n3, r4) {
+    d4();
+    v4 = void 0;
+    var i6;
+    if ("string" == typeof r4.type && (i6 = r4.__e)) {
+      var t4 = r4.__np, f6 = r4.props;
+      if (t4) {
+        var o5 = i6.U;
+        if (o5)
+          for (var e4 in o5) {
+            var u6 = o5[e4];
+            if (void 0 !== u6 && !(e4 in t4)) {
+              u6.d();
+              o5[e4] = void 0;
+            }
+          }
+        else
+          i6.U = o5 = {};
+        for (var a5 in t4) {
+          var c5 = o5[a5], s6 = t4[a5];
+          if (void 0 === c5) {
+            c5 = _4(i6, a5, s6, f6);
+            o5[a5] = c5;
+          } else
+            c5.o(s6, f6);
+        }
+      }
+    }
+    n3(r4);
+  });
+  function _4(n3, r4, i6, t4) {
+    var f6 = r4 in n3 && void 0 === n3.ownerSVGElement, o5 = d3(i6);
+    return { o: function(n4, r5) {
+      o5.value = n4;
+      t4 = r5;
+    }, d: E(function() {
+      var i7 = o5.value.value;
+      if (t4[r4] !== i7) {
+        t4[r4] = i7;
+        if (f6)
+          n3[r4] = i7;
+        else if (i7)
+          n3.setAttribute(r4, i7);
+        else
+          n3.removeAttribute(r4);
+      }
+    }) };
+  }
+  l4("unmount", function(n3, r4) {
+    if ("string" == typeof r4.type) {
+      var i6 = r4.__e;
+      if (i6) {
+        var t4 = i6.U;
+        if (t4) {
+          i6.U = void 0;
+          for (var f6 in t4) {
+            var o5 = t4[f6];
+            if (o5)
+              o5.d();
+          }
+        }
+      }
+    } else {
+      var e4 = r4.__c;
+      if (e4) {
+        var u6 = e4.__$u;
+        if (u6) {
+          e4.__$u = void 0;
+          u6.d();
+        }
+      }
+    }
+    n3(r4);
+  });
+  l4("__h", function(n3, r4, i6, t4) {
+    if (t4 < 3 || 9 === t4)
+      r4.__$f |= 2;
+    n3(r4, i6, t4);
+  });
+  w.prototype.shouldComponentUpdate = function(n3, r4) {
+    var i6 = this.__$u;
+    if (!(i6 && void 0 !== i6.s || 4 & this.__$f))
+      return true;
+    if (3 & this.__$f)
+      return true;
+    for (var t4 in r4)
+      return true;
+    for (var f6 in n3)
+      if ("__source" !== f6 && n3[f6] !== this.props[f6])
+        return true;
+    for (var o5 in this.props)
+      if (!(o5 in n3))
+        return true;
+    return false;
+  };
+  function useSignal(n3) {
+    return q2(function() {
+      return d3(n3);
+    }, []);
+  }
+
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/devtools/dist/devtools.module.js
+  "undefined" != typeof window && window.__PREACT_DEVTOOLS__ && window.__PREACT_DEVTOOLS__.attachPreact("10.21.0", l, { Fragment: m, Component: w });
+
+  // ../../node_modules/.pnpm/preact@10.21.0/node_modules/preact/debug/dist/debug.module.js
+  var o4 = {};
+  function a4(e4) {
+    return e4.type === m ? "Fragment" : "function" == typeof e4.type ? e4.type.displayName || e4.type.name : "string" == typeof e4.type ? e4.type : "#text";
+  }
+  var i5 = [];
+  var s5 = [];
+  function c4() {
+    return i5.length > 0 ? i5[i5.length - 1] : null;
+  }
+  var l5 = true;
+  function u5(e4) {
+    return "function" == typeof e4.type && e4.type != m;
+  }
+  function f5(n3) {
+    for (var e4 = [n3], t4 = n3; null != t4.__o; )
+      e4.push(t4.__o), t4 = t4.__o;
+    return e4.reduce(function(n4, e5) {
+      n4 += "  in " + a4(e5);
+      var t5 = e5.__source;
+      return t5 ? n4 += " (at " + t5.fileName + ":" + t5.lineNumber + ")" : l5 && console.warn("Add @babel/plugin-transform-react-jsx-source to get a more detailed component stack. Note that you should not add it to production builds of your App for bundle size reasons."), l5 = false, n4 + "\n";
+    }, "");
+  }
+  var p4 = "function" == typeof WeakMap;
+  function d5(n3) {
+    var e4 = [];
+    return n3.__k ? (n3.__k.forEach(function(n4) {
+      n4 && "function" == typeof n4.type ? e4.push.apply(e4, d5(n4)) : n4 && "string" == typeof n4.type && e4.push(n4.type);
+    }), e4) : e4;
+  }
+  function h4(n3) {
+    return n3 ? "function" == typeof n3.type ? null === n3.__ ? null !== n3.__e && null !== n3.__e.parentNode ? n3.__e.parentNode.localName : "" : h4(n3.__) : n3.type : "";
+  }
+  var v5 = w.prototype.setState;
+  function y3(n3) {
+    return "table" === n3 || "tfoot" === n3 || "tbody" === n3 || "thead" === n3 || "td" === n3 || "tr" === n3 || "th" === n3;
+  }
+  w.prototype.setState = function(n3, e4) {
+    return null == this.__v && null == this.state && console.warn('Calling "this.setState" inside the constructor of a component is a no-op and might be a bug in your application. Instead, set "this.state = {}" directly.\n\n' + f5(c4())), v5.call(this, n3, e4);
+  };
+  var m3 = /^(address|article|aside|blockquote|details|div|dl|fieldset|figcaption|figure|footer|form|h1|h2|h3|h4|h5|h6|header|hgroup|hr|main|menu|nav|ol|p|pre|search|section|table|ul)$/;
+  var b2 = w.prototype.forceUpdate;
+  function w4(n3) {
+    var e4 = n3.props, t4 = a4(n3), o5 = "";
+    for (var r4 in e4)
+      if (e4.hasOwnProperty(r4) && "children" !== r4) {
+        var i6 = e4[r4];
+        "function" == typeof i6 && (i6 = "function " + (i6.displayName || i6.name) + "() {}"), i6 = Object(i6) !== i6 || i6.toString ? i6 + "" : Object.prototype.toString.call(i6), o5 += " " + r4 + "=" + JSON.stringify(i6);
+      }
+    var s6 = e4.children;
+    return "<" + t4 + o5 + (s6 && s6.length ? ">..</" + t4 + ">" : " />");
+  }
+  w.prototype.forceUpdate = function(n3) {
+    return null == this.__v ? console.warn('Calling "this.forceUpdate" inside the constructor of a component is a no-op and might be a bug in your application.\n\n' + f5(c4())) : null == this.__P && console.warn(`Can't call "this.forceUpdate" on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method.
+
+` + f5(this.__v)), b2.call(this, n3);
+  }, function() {
+    !function() {
+      var n4 = l.__b, t5 = l.diffed, o5 = l.__, r5 = l.vnode, a5 = l.__r;
+      l.diffed = function(n5) {
+        u5(n5) && s5.pop(), i5.pop(), t5 && t5(n5);
+      }, l.__b = function(e4) {
+        u5(e4) && i5.push(e4), n4 && n4(e4);
+      }, l.__ = function(n5, e4) {
+        s5 = [], o5 && o5(n5, e4);
+      }, l.vnode = function(n5) {
+        n5.__o = s5.length > 0 ? s5[s5.length - 1] : null, r5 && r5(n5);
+      }, l.__r = function(n5) {
+        u5(n5) && s5.push(n5), a5 && a5(n5);
+      };
+    }();
+    var n3 = false, t4 = l.__b, r4 = l.diffed, c5 = l.vnode, l6 = l.__r, v6 = l.__e, b3 = l.__, g3 = l.__h, E2 = p4 ? { useEffect: /* @__PURE__ */ new WeakMap(), useLayoutEffect: /* @__PURE__ */ new WeakMap(), lazyPropTypes: /* @__PURE__ */ new WeakMap() } : null, k3 = [];
+    l.__e = function(n4, e4, t5, o5) {
+      if (e4 && e4.__c && "function" == typeof n4.then) {
+        var r5 = n4;
+        n4 = new Error("Missing Suspense. The throwing component was: " + a4(e4));
+        for (var i6 = e4; i6; i6 = i6.__)
+          if (i6.__c && i6.__c.__c) {
+            n4 = r5;
+            break;
+          }
+        if (n4 instanceof Error)
+          throw n4;
+      }
+      try {
+        (o5 = o5 || {}).componentStack = f5(e4), v6(n4, e4, t5, o5), "function" != typeof n4.then && setTimeout(function() {
+          throw n4;
+        });
+      } catch (n5) {
+        throw n5;
+      }
+    }, l.__ = function(n4, e4) {
+      if (!e4)
+        throw new Error("Undefined parent passed to render(), this is the second argument.\nCheck if the element is available in the DOM/has the correct id.");
+      var t5;
+      switch (e4.nodeType) {
+        case 1:
+        case 11:
+        case 9:
+          t5 = true;
+          break;
+        default:
+          t5 = false;
+      }
+      if (!t5) {
+        var o5 = a4(n4);
+        throw new Error("Expected a valid HTML node as a second argument to render.	Received " + e4 + " instead: render(<" + o5 + " />, " + e4 + ");");
+      }
+      b3 && b3(n4, e4);
+    }, l.__b = function(e4) {
+      var r5 = e4.type;
+      if (n3 = true, void 0 === r5)
+        throw new Error("Undefined component passed to createElement()\n\nYou likely forgot to export your component or might have mixed up default and named imports" + w4(e4) + "\n\n" + f5(e4));
+      if (null != r5 && "object" == typeof r5) {
+        if (void 0 !== r5.__k && void 0 !== r5.__e)
+          throw new Error("Invalid type passed to createElement(): " + r5 + "\n\nDid you accidentally pass a JSX literal as JSX twice?\n\n  let My" + a4(e4) + " = " + w4(r5) + ";\n  let vnode = <My" + a4(e4) + " />;\n\nThis usually happens when you export a JSX literal and not the component.\n\n" + f5(e4));
+        throw new Error("Invalid type passed to createElement(): " + (Array.isArray(r5) ? "array" : r5));
+      }
+      if (void 0 !== e4.ref && "function" != typeof e4.ref && "object" != typeof e4.ref && !("$$typeof" in e4))
+        throw new Error(`Component's "ref" property should be a function, or an object created by createRef(), but got [` + typeof e4.ref + "] instead\n" + w4(e4) + "\n\n" + f5(e4));
+      if ("string" == typeof e4.type) {
+        for (var i6 in e4.props)
+          if ("o" === i6[0] && "n" === i6[1] && "function" != typeof e4.props[i6] && null != e4.props[i6])
+            throw new Error(`Component's "` + i6 + '" property should be a function, but got [' + typeof e4.props[i6] + "] instead\n" + w4(e4) + "\n\n" + f5(e4));
+      }
+      if ("function" == typeof e4.type && e4.type.propTypes) {
+        if ("Lazy" === e4.type.displayName && E2 && !E2.lazyPropTypes.has(e4.type)) {
+          var s6 = "PropTypes are not supported on lazy(). Use propTypes on the wrapped component itself. ";
+          try {
+            var c6 = e4.type();
+            E2.lazyPropTypes.set(e4.type, true), console.warn(s6 + "Component wrapped in lazy() is " + a4(c6));
+          } catch (n4) {
+            console.warn(s6 + "We will log the wrapped component's name once it is loaded.");
+          }
+        }
+        var l7 = e4.props;
+        e4.type.__f && delete (l7 = function(n4, e5) {
+          for (var t5 in e5)
+            n4[t5] = e5[t5];
+          return n4;
+        }({}, l7)).ref, function(n4, e5, t5, r6, a5) {
+          Object.keys(n4).forEach(function(t6) {
+            var i7;
+            try {
+              i7 = n4[t6](e5, t6, r6, "prop", null, "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED");
+            } catch (n5) {
+              i7 = n5;
+            }
+            i7 && !(i7.message in o4) && (o4[i7.message] = true, console.error("Failed prop type: " + i7.message + (a5 && "\n" + a5() || "")));
+          });
+        }(e4.type.propTypes, l7, 0, a4(e4), function() {
+          return f5(e4);
+        });
+      }
+      t4 && t4(e4);
+    };
+    var _5, T = 0;
+    l.__r = function(e4) {
+      l6 && l6(e4), n3 = true;
+      var t5 = e4.__c;
+      if (t5 === _5 ? T++ : T = 1, T >= 25)
+        throw new Error("Too many re-renders. This is limited to prevent an infinite loop which may lock up your browser. The component causing this is: " + a4(e4));
+      _5 = t5;
+    }, l.__h = function(e4, t5, o5) {
+      if (!e4 || !n3)
+        throw new Error("Hook can only be invoked from render methods.");
+      g3 && g3(e4, t5, o5);
+    };
+    var I2 = function(n4, e4) {
+      return { get: function() {
+        var t5 = "get" + n4 + e4;
+        k3 && k3.indexOf(t5) < 0 && (k3.push(t5), console.warn("getting vnode." + n4 + " is deprecated, " + e4));
+      }, set: function() {
+        var t5 = "set" + n4 + e4;
+        k3 && k3.indexOf(t5) < 0 && (k3.push(t5), console.warn("setting vnode." + n4 + " is not allowed, " + e4));
+      } };
+    }, j3 = { nodeName: I2("nodeName", "use vnode.type"), attributes: I2("attributes", "use vnode.props"), children: I2("children", "use vnode.props.children") }, O2 = Object.create({}, j3);
+    l.vnode = function(n4) {
+      var e4 = n4.props;
+      if (null !== n4.type && null != e4 && ("__source" in e4 || "__self" in e4)) {
+        var t5 = n4.props = {};
+        for (var o5 in e4) {
+          var r5 = e4[o5];
+          "__source" === o5 ? n4.__source = r5 : "__self" === o5 ? n4.__self = r5 : t5[o5] = r5;
+        }
+      }
+      n4.__proto__ = O2, c5 && c5(n4);
+    }, l.diffed = function(e4) {
+      var t5, o5 = e4.type, i6 = e4.__;
+      if (e4.__k && e4.__k.forEach(function(n4) {
+        if ("object" == typeof n4 && n4 && void 0 === n4.type) {
+          var t6 = Object.keys(n4).join(",");
+          throw new Error("Objects are not valid as a child. Encountered an object with the keys {" + t6 + "}.\n\n" + f5(e4));
+        }
+      }), "string" == typeof o5 && (y3(o5) || "p" === o5)) {
+        var s6 = h4(i6);
+        if ("" !== s6)
+          "table" === o5 && "td" !== s6 && y3(s6) ? (console.log(s6, i6.__e), console.error("Improper nesting of table. Your <table> should not have a table-node parent." + w4(e4) + "\n\n" + f5(e4))) : "thead" !== o5 && "tfoot" !== o5 && "tbody" !== o5 || "table" === s6 ? "tr" === o5 && "thead" !== s6 && "tfoot" !== s6 && "tbody" !== s6 && "table" !== s6 ? console.error("Improper nesting of table. Your <tr> should have a <thead/tbody/tfoot/table> parent." + w4(e4) + "\n\n" + f5(e4)) : "td" === o5 && "tr" !== s6 ? console.error("Improper nesting of table. Your <td> should have a <tr> parent." + w4(e4) + "\n\n" + f5(e4)) : "th" === o5 && "tr" !== s6 && console.error("Improper nesting of table. Your <th> should have a <tr>." + w4(e4) + "\n\n" + f5(e4)) : console.error("Improper nesting of table. Your <thead/tbody/tfoot> should have a <table> parent." + w4(e4) + "\n\n" + f5(e4));
+        else if ("p" === o5) {
+          var c6 = d5(e4).filter(function(n4) {
+            return m3.test(n4);
+          });
+          c6.length && console.error("Improper nesting of paragraph. Your <p> should not have " + c6.join(", ") + "as child-elements." + w4(e4) + "\n\n" + f5(e4));
+        }
+      }
+      if (n3 = false, r4 && r4(e4), null != e4.__k)
+        for (var l7 = [], u6 = 0; u6 < e4.__k.length; u6++) {
+          var p5 = e4.__k[u6];
+          if (p5 && null != p5.key) {
+            var v7 = p5.key;
+            if (-1 !== l7.indexOf(v7)) {
+              console.error('Following component has two or more children with the same key attribute: "' + v7 + '". This may cause glitches and misbehavior in rendering process. Component: \n\n' + w4(e4) + "\n\n" + f5(e4));
+              break;
+            }
+            l7.push(v7);
+          }
+        }
+      if (null != e4.__c && null != e4.__c.__H) {
+        var b4 = e4.__c.__H.__;
+        if (b4)
+          for (var g4 = 0; g4 < b4.length; g4 += 1) {
+            var E3 = b4[g4];
+            if (E3.__H) {
+              for (var k4 = 0; k4 < E3.__H.length; k4++)
+                if ((t5 = E3.__H[k4]) != t5) {
+                  var _6 = a4(e4);
+                  throw new Error("Invalid argument passed to hook. Hooks should not be called with NaN in the dependency array. Hook index " + g4 + " in component " + _6 + " was called with NaN.");
+                }
+            }
+          }
+      }
+    };
+  }();
+
+  // dist/Large.js
+  var Large = () => {
+    return u2("div", { children: Array(1e4).fill(Math.random()).map((n3) => u2("div", { children: n3 })) });
+  };
+
+  // dist/MyEl.js
+  var MyEl = ({ size }) => {
+    return u2("div", { children: ["This is the size: ", size, " + ", size, " = ", size * 2, "!!!"] });
+  };
+
+  // dist/core/globals.js
+  var X_ELEMENT_PROPERTIES_KEY = "_x_element_properties";
+
+  // dist/decorator/component.js
+  function Component({ tag }) {
+    return function ClassDecorator(target, ctx) {
+      var _a2;
+      const className = (_a2 = ctx.name) === null || _a2 === void 0 ? void 0 : _a2.toString();
+      console.debug(`[@Component] Class Name: ${className}`);
+      if ("render" in target) {
+        throw new Error("You have to define a render method.");
+      }
+      ctx.addInitializer(function() {
+        customElements.define(tag, this);
+      });
+      return class XElement extends target {
+        constructor(...args) {
+          super();
+          const shadowRoot = this.attachShadow({ mode: "open" });
+          if (typeof this.injectStyles === "function") {
+            this.injectStyles(shadowRoot);
+          }
+          const App = this.render.bind(this);
+          B(g(App, null), shadowRoot);
+        }
+        attributeChangedCallback(name, oldValue, newValue) {
+          if (typeof super.attributeChangedCallback !== "undefined") {
+            super.attributeChangedCallback(name, oldValue, newValue);
+          } else {
+            console.log(`[@Component] Attribute ${name} has changed from ${oldValue} to ${newValue}.`);
+            if (name in this && oldValue !== newValue) {
+              this[name] = newValue;
+            }
+          }
+        }
+        static get observedAttributes() {
+          var _a3, _b;
+          return (_b = (_a3 = this[Symbol.metadata]) === null || _a3 === void 0 ? void 0 : _a3[X_ELEMENT_PROPERTIES_KEY]) !== null && _b !== void 0 ? _b : [];
+        }
+      };
+    };
+  }
+
+  // dist/core/metadata-shim.js
+  var _a;
+  (_a = Symbol.metadata) !== null && _a !== void 0 ? _a : Symbol.metadata = Symbol.for("Symbol.metadata");
+
+  // dist/decorator/property.js
+  function Property(args) {
+    function result(target, context) {
+      const propertyName = (args === null || args === void 0 ? void 0 : args.name) || context.name.toString();
+      console.debug(`[@Property] Property Name: ${propertyName}`, { context });
+      if (Array.isArray(context.metadata[X_ELEMENT_PROPERTIES_KEY])) {
+        context.metadata[X_ELEMENT_PROPERTIES_KEY] = [...context.metadata[X_ELEMENT_PROPERTIES_KEY], propertyName];
+      } else {
+        context.metadata[X_ELEMENT_PROPERTIES_KEY] = [propertyName];
+      }
+      switch (context.kind) {
+        case "accessor":
+          const { get } = target;
+          return {
+            get() {
+              const v6 = get.call(this);
+              return v6;
+            },
+            set(val) {
+              const signalValue = get.call(this);
+              if (signalValue) {
+                signalValue.value = val;
+              }
+              if (args === null || args === void 0 ? void 0 : args.reflect)
+                this.setAttribute(propertyName, val);
+            },
+            init(initialValue) {
+              const value = d3(initialValue);
+              return value;
+            }
+          };
+        case "field":
+          return function(value) {
+            return value;
+          };
+      }
+    }
+    ;
+    return result;
+  }
+
+  // dist/main.js
+  var __esDecorate = function(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+    function accept(f6) {
+      if (f6 !== void 0 && typeof f6 !== "function")
+        throw new TypeError("Function expected");
+      return f6;
+    }
+    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+    var _5, done = false;
+    for (var i6 = decorators.length - 1; i6 >= 0; i6--) {
+      var context = {};
+      for (var p5 in contextIn)
+        context[p5] = p5 === "access" ? {} : contextIn[p5];
+      for (var p5 in contextIn.access)
+        context.access[p5] = contextIn.access[p5];
+      context.addInitializer = function(f6) {
+        if (done)
+          throw new TypeError("Cannot add initializers after decoration has completed");
+        extraInitializers.push(accept(f6 || null));
+      };
+      var result = (0, decorators[i6])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+      if (kind === "accessor") {
+        if (result === void 0)
+          continue;
+        if (result === null || typeof result !== "object")
+          throw new TypeError("Object expected");
+        if (_5 = accept(result.get))
+          descriptor.get = _5;
+        if (_5 = accept(result.set))
+          descriptor.set = _5;
+        if (_5 = accept(result.init))
+          initializers.unshift(_5);
+      } else if (_5 = accept(result)) {
+        if (kind === "field")
+          initializers.unshift(_5);
+        else
+          descriptor[key] = _5;
+      }
+    }
+    if (target)
+      Object.defineProperty(target, contextIn.name, descriptor);
+    done = true;
+  };
+  var __runInitializers = function(thisArg, initializers, value) {
+    var useValue = arguments.length > 2;
+    for (var i6 = 0; i6 < initializers.length; i6++) {
+      value = useValue ? initializers[i6].call(thisArg, value) : initializers[i6].call(thisArg);
+    }
+    return useValue ? value : void 0;
+  };
+  var __setFunctionName = function(f6, name, prefix) {
+    if (typeof name === "symbol")
+      name = name.description ? "[".concat(name.description, "]") : "";
+    return Object.defineProperty(f6, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+  };
+  var __classPrivateFieldGet = function(receiver, state, kind, f6) {
+    if (kind === "a" && !f6)
+      throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f6 : !state.has(receiver))
+      throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f6 : kind === "a" ? f6.call(receiver) : f6 ? f6.value : state.get(receiver);
+  };
+  var __classPrivateFieldSet = function(receiver, state, value, kind, f6) {
+    if (kind === "m")
+      throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f6)
+      throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f6 : !state.has(receiver))
+      throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return kind === "a" ? f6.call(receiver, value) : f6 ? f6.value = value : state.set(receiver, value), value;
+  };
+  var MyXElement = (() => {
+    var _MyXElement_size_accessor_storage, _MyXElement_name_accessor_storage, _MyXElement_loading_accessor_storage;
+    let _classDecorators = [Component({
+      tag: "my-custom-element",
+      style: "main.scss"
+    })];
+    let _classDescriptor;
+    let _classExtraInitializers = [];
+    let _classThis;
+    let _classSuper = HTMLElement;
+    let _size_decorators;
+    let _size_initializers = [];
+    let _size_extraInitializers = [];
+    let _name_decorators;
+    let _name_initializers = [];
+    let _name_extraInitializers = [];
+    var MyXElement2 = _classThis = class extends _classSuper {
+      get size() {
+        return __classPrivateFieldGet(this, _MyXElement_size_accessor_storage, "f");
+      }
+      set size(value) {
+        __classPrivateFieldSet(this, _MyXElement_size_accessor_storage, value, "f");
+      }
+      get name() {
+        return __classPrivateFieldGet(this, _MyXElement_name_accessor_storage, "f");
+      }
+      set name(value) {
+        __classPrivateFieldSet(this, _MyXElement_name_accessor_storage, value, "f");
+      }
+      get loading() {
+        return __classPrivateFieldGet(this, _MyXElement_loading_accessor_storage, "f");
+      }
+      set loading(value) {
+        __classPrivateFieldSet(this, _MyXElement_loading_accessor_storage, value, "f");
+      }
+      constructor() {
+        super();
+        _MyXElement_size_accessor_storage.set(this, __runInitializers(this, _size_initializers, 0));
+        _MyXElement_name_accessor_storage.set(this, (__runInitializers(this, _size_extraInitializers), __runInitializers(this, _name_initializers, "")));
+        _MyXElement_loading_accessor_storage.set(this, (__runInitializers(this, _name_extraInitializers), d3(false)));
+      }
+      render() {
+        const isLoading = this.loading.value;
+        return u2(m, { children: [u2("h1", { children: "hi" }), u2("br", {}), u2(MyEl, { size: this.size }), u2("br", {}), u2("div", { children: !isLoading ? "Loading..." : "Loaded" }), u2("br", {}), u2("button", { onClick: () => {
+          console.debug("clicked");
+          this.name = `${this.size} is now`;
+          this.loading.value = !this.loading.value;
+        }, children: "Toggle" }), u2(Large, {})] });
+      }
+      injectStyles(shadowRoot) {
+        const style = document.createElement("style");
+        style.textContent = "div {\n  background-color: aquamarine;\n}";
+        shadowRoot.appendChild(style);
+      }
+    };
+    _MyXElement_size_accessor_storage = /* @__PURE__ */ new WeakMap();
+    _MyXElement_name_accessor_storage = /* @__PURE__ */ new WeakMap();
+    _MyXElement_loading_accessor_storage = /* @__PURE__ */ new WeakMap();
+    __setFunctionName(_classThis, "MyXElement");
+    (() => {
+      var _a2;
+      const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create((_a2 = _classSuper[Symbol.metadata]) !== null && _a2 !== void 0 ? _a2 : null) : void 0;
+      _size_decorators = [Property()];
+      _name_decorators = [Property()];
+      __esDecorate(_classThis, null, _size_decorators, { kind: "accessor", name: "size", static: false, private: false, access: { has: (obj) => "size" in obj, get: (obj) => obj.size, set: (obj, value) => {
+        obj.size = value;
+      } }, metadata: _metadata }, _size_initializers, _size_extraInitializers);
+      __esDecorate(_classThis, null, _name_decorators, { kind: "accessor", name: "name", static: false, private: false, access: { has: (obj) => "name" in obj, get: (obj) => obj.name, set: (obj, value) => {
+        obj.name = value;
+      } }, metadata: _metadata }, _name_initializers, _name_extraInitializers);
+      __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
+      MyXElement2 = _classThis = _classDescriptor.value;
+      if (_metadata)
+        Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
+      __runInitializers(_classThis, _classExtraInitializers);
+    })();
+    return MyXElement2 = _classThis;
+  })();
+})();
 //# sourceMappingURL=xelement.js.map

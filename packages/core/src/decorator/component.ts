@@ -48,7 +48,7 @@ export default function Component({ tag }: ComponentArgs) {
 
         const App = this.render.bind(this)
 
-        render(h(App, {}), shadowRoot);
+        render(h(App, null), shadowRoot);
       }
 
       attributeChangedCallback(name: any, oldValue: any, newValue: any) {
